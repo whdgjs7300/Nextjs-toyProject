@@ -1,9 +1,12 @@
 import Image from 'next/image'
+import styles from './CSS/Home.module.css';
+import MainBanner from './components/MainBanner';
 
 export default function Home() {
   return (
-    <>
-      프로젝트 기획, 준비 하자 종헌아 
-    </>
+    <div>
+      <h1 className={styles.title}>홈페이지 입니다.</h1>
+      <MainBanner/>
+    </div>
   )
 }
