@@ -1,7 +1,14 @@
-
 import type { Metadata } from 'next'
 import Navbar from './components/Navbar';
 import './globals.css'
+import {Dongle} from 'next/font/google'
+
+// 폰트
+const dongle = Dongle({
+  weight : '400',
+  subsets : ['latin'],
+  style : ['normal'], 
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,11 +20,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html >
+    <html  className={dongle.className}>
       <body >
         <Navbar/>
-        <h1>ff</h1>
+        
         {children}
         </body>
     </html>

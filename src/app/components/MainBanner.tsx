@@ -5,12 +5,11 @@ export default function MainBanner() {
 
 return (
     <div className={styles.banner}>
-        <h1 > 배너 넣자 !</h1>
         <Image 
         alt='Main Banner' 
-        src='/banner2.jpg'
-        layout='fill'
-        objectFit='cover'
+        src='/banner1.jpg'
+        fill={true} // 상위 태그 크기에 채우기 
+        priority = {false}
         />
     </div>
 )
