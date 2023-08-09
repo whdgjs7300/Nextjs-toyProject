@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Navbar from './components/Navbar';
 import './globals.css'
 import {Dongle} from 'next/font/google'
+import Footer from './components/Footer';
 
 // 폰트
 const dongle = Dongle({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Navbar/>
         
         {children}
+        <Footer/>
         </body>
     </html>
   )

@@ -1,6 +1,5 @@
 import styles from './CSS/Home.module.css';
 import MainBanner from './components/MainBanner';
-import Footer from './components/Footer';
 import ForestBanner from './components/ForestBanner';
 import OceanBanner from './components/OceanBanner';
 
@@ -12,7 +11,7 @@ export default function Home() {
 
       <ForestBanner/>
       <OceanBanner/>
-      <Footer/>
+
     </div>
   )
 }
