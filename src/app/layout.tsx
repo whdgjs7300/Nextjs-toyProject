@@ -1,14 +1,17 @@
+
 import type { Metadata } from 'next'
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
 import './globals.css'
 import {Dongle} from 'next/font/google'
-import Footer from './components/Footer';
+import Footer from '../components/Footer';
 
 // 폰트
 const dongle = Dongle({
   weight : '400',
   subsets : ['latin'],
-  style : ['normal'], 
+  
+  display : "swap",
+  
 })
 
 export const metadata: Metadata = {

@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 import HomeImageCard from './HomeImageCard';
 import Slider from "react-slick";
@@ -16,6 +15,9 @@ export default function ForestBanner() {
         
     };
 
+    // ForestListState 아톰 상태값 호출
+   // const forestList = useRecoilValue(ForestListState);
+   // console.log(forestList)
 return (
     <>
         <div className={styles.bannerContainer}>  
