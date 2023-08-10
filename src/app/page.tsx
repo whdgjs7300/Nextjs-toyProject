@@ -44,7 +44,7 @@ export default  function Home() {
       
       <MainBanner/>
       
-      <ForestBanner/>
+      <ForestBanner forestList={campingData} />
       <OceanBanner/>
       
       

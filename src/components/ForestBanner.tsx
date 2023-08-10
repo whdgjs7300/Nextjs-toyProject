@@ -1,9 +1,16 @@
 'use client'
+import axios from 'axios';
 import styles from '../CSS/Home.module.css';
 import HomeImageCard from './HomeImageCard';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
+import { useEffect, useState } from 'react';
+
+
+
+
+const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
 export default function ForestBanner() {
     const settings = {
@@ -14,10 +21,25 @@ export default function ForestBanner() {
         slidesToScroll: 3,
         
     };
+    
+    const [foreCampingData, setForeCampingData] = useState<CampingData[]>();
 
-    // ForestListState 아톰 상태값 호출
-   // const forestList = useRecoilValue(ForestListState);
-   // console.log(forestList)
+
+    useEffect(() => {
+        async function loadData() {
+            try {
+                const response = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=%EC%88%B2&_type=json`);
+                const data = response.data;
+                setForeCampingData(data.response.body.items.item);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        loadData();
+    }, []);
+
+
+
 return (
     <>
         <div className={styles.bannerContainer}>  
@@ -27,12 +49,13 @@ return (
         </div>
         
         <Slider {...settings}>
-        <HomeImageCard />
-            <HomeImageCard />
-            <HomeImageCard />
-            <HomeImageCard />
-            <HomeImageCard />
-            <HomeImageCard />
+            {
+                foreCampingData?.map((item)=>{
+                    return <HomeImageCard key={item.firstImageUrl} item={item.firstImageUrl} />
+                })
+            }
+        
+            
         </Slider>
         
     </div>

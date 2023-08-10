@@ -2,17 +2,21 @@
 import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 
-export default function HomeImageCard() {
+type ImgProps = {
+    item : string
+} 
+
+export default function HomeImageCard({item}: ImgProps) {
+    console.log(item && item)
 
 return (
         <div className={styles.imageCard}>
         <div className={styles.imageContainer}>
-            <Image
-                alt='Forest Image'
-                src='/banner2.jpg'
-                fill={true}
-                priority={true}
-            />
+                <img
+                    alt='Forest Image'
+                    src={item}
+                    className={styles.image} // Adjust class name as needed
+                />
         </div>
         <div className={styles.cardContent}>
             
