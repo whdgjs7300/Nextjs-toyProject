@@ -7,7 +7,7 @@ type ImgProps = {
 } 
 
 export default function HomeImageCard({item}: ImgProps) {
-    console.log(item && item)
+    
 
 return (
         <div className={styles.imageCard}>
