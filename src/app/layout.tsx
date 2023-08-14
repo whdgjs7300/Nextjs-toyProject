@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 const dongle = Dongle({
   weight : '400',
   subsets : ['latin'],
-  
   display : "swap",
   
 })

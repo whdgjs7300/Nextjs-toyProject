@@ -1,30 +1,30 @@
 import Link from "next/link";
-
+import styles from '../CSS/Navbar.module.css';
 
 export default function Navbar() {
     return (
-        <nav>
-            <ul className="nav-list">
-            <li className="nav-item">
-                <Link href="/">
-                Home
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link href="/about">
-                소개
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link href="/services">
-                서비스
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link href="/contact">
-                연락처
-                </Link>
-            </li>
+        <nav className={styles.navbar}>
+            <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/">
+                        홈
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/about">
+                        소개
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/services">
+                        서비스
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/contact">
+                        문의
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

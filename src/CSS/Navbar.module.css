@@ -1,0 +1,31 @@
+/* Navbar.module.css */
+
+.navbar {
+    background-color: lightblue; /* 연한 연두색 배경색 */
+    padding: 10px 0;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    margin: 0 45px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    font-size: 42px;
+    transition: color 0.3s;
+}
+
+.navLink:hover {
+    color: lightseagreen;
+    border-bottom: 2px solid white; 
+}
