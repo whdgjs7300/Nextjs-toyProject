@@ -2,20 +2,20 @@
 import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 
-type ImgProps = {
-    item : string
+type DataProps = {
+    item : CampingData
 } 
 
-export default function HomeImageCard({item}: ImgProps) {
+export default function HomeImageCard({item}: DataProps) {
     
 
 return (
         <div className={styles.imageCard}>
         <div className={styles.imageContainer}>
                 <img
-                    alt='Forest Image'
-                    src={item}
-                    className={styles.image} // Adjust class name as needed
+                    alt='Forest & Ocean Image'
+                    src={item.firstImageUrl}
+                    className={styles.image} 
                 />
         </div>
         <div className={styles.cardContent}>

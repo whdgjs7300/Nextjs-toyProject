@@ -30,8 +30,8 @@ export default function ForestBanner() {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             }
         ]
@@ -58,7 +58,7 @@ export default function ForestBanner() {
 return (
     <>
         <div className={styles.bannerContainer}>  
-        <div className={styles.middle_Title}>
+        <div className={styles.middle_container}>
             <h1 >힐링을 위한 상쾌한 산림 캠핑</h1>
             <p>""에서 추천하는 이달의 캠핑 </p>
         </div>
@@ -66,7 +66,7 @@ return (
         <Slider {...settings}>
             {
                 foreCampingData?.map((item)=>{
-                    return <HomeImageCard key={item.firstImageUrl} item={item.firstImageUrl} />
+                    return <HomeImageCard key={item.firstImageUrl} item={item} />
                 })
             }
         

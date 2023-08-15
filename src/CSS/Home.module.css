@@ -33,15 +33,15 @@
 
 /* 산림 배너 컴포넌트 CSS */
 
-.middle_Title {
+.middle_container {
     margin-top: 50px;
     text-align: center;
     
 }
-.middle_Title h1 {
+.middle_container h1 {
     font-size: 50px;
 }
-.middle_Title p {
+.middle_container p {
     font-size: 32px;
 }
 
