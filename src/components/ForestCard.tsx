@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 
 type DataProps = {
-    item : CampingData
+    item : CampingData,
 } 
 
 export default function HomeImageCard({item}: DataProps) {
@@ -13,7 +13,7 @@ return (
         <div className={styles.imageCard}>
         <div className={styles.imageContainer}>
                 <img
-                    alt='Forest & Ocean Image'
+                    alt='Forest Image'
                     src={item.firstImageUrl}
                     className={styles.image} 
                 />

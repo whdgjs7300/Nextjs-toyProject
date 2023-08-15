@@ -1,7 +1,7 @@
 'use client'
 import axios from 'axios';
 import styles from '../CSS/Home.module.css';
-import HomeImageCard from './HomeImageCard';
+import ForestCard from './ForestCard';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
@@ -43,7 +43,7 @@ export default function ForestBanner() {
     useEffect(() => {
         async function loadData() {
             try {
-                const response = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=%EC%88%B2&_type=json`);
+                const response = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=17&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=%EC%88%B2&_type=json`);
                 const data = response.data;
                 setForeCampingData(data.response.body.items.item);
             } catch (error) {
@@ -58,17 +58,18 @@ export default function ForestBanner() {
 return (
     <>
         <div className={styles.bannerContainer}>  
-        <div className={styles.middle_container}>
+        <div className={styles.forest_middle_container}>
             <h1 >힐링을 위한 상쾌한 산림 캠핑</h1>
             <p>""에서 추천하는 이달의 캠핑 </p>
         </div>
         
         <Slider {...settings}>
-            {
-                foreCampingData?.map((item)=>{
-                    return <HomeImageCard key={item.firstImageUrl} item={item} />
-                })
-            }
+            {foreCampingData?.map((item, i) => {
+                if (item.firstImageUrl) {
+                    return <ForestCard item={item} key={i} />;
+                }
+                return null; // Skip rendering for items without firstImageUrl
+            })}
         
             
         </Slider>

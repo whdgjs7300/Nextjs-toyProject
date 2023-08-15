@@ -33,7 +33,7 @@
 
 /* 산림 배너 컴포넌트 CSS */
 
-.middle_container {
+.forest_middle_container {
     margin-top: 50px;
     text-align: center;
     
@@ -47,12 +47,12 @@
 
 
 .bannerContainer {
-    height: 600px; /* 원하는 높이로 설정하세요 */
+    height: 600px; 
     background-color: #f0f8ff; 
-    padding: 20px; /* 내용과의 간격을 설정합니다. 필요에 따라 조절하세요 */
+    padding: 20px; 
 }
 
-/* 카드 이미지 컴포넌트 */
+/* 산림 캠핑카드 이미지 컴포넌트 */
 
 .imageCard {
     position: relative;
@@ -90,4 +90,66 @@
 .cardContent p {
     font-size: 14px;
     color: #666;
+}
+
+/* 오션 캠핑 배너 */
+.ocean_middle_container {
+    position: relative;
+    text-align: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+
+/* 오션캠핑 카드 */
+.ocean_cardContainer {
+    display: flex; /* Change: use flex */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Change: horizontal spacing between cards */
+    align-items: flex-start;
+    margin-top: 20px;
+    
+}
+
+
+.ocean_imageCard {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    border-radius: 10px;
+    margin: 10px; 
+}
+
+
+.roundedImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 둥근 형태의 이미지 박스를 만듭니다 */
+    overflow: hidden; /* 이미지 박스 내부의 이미지를 숨깁니다 */
+    display: flex;
+    justify-content: center; /* 수평 정렬 */
+    align-items: center; /* 수직 정렬 */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.ocean_cardContent {
+    margin-top: 30px;
+    width: 150px;
+    padding: 0 20px;
+    text-align: center; /* 추가: 내용 가운데 정렬 */
+    background-color: white;
+}
+
+.ocean_cardContent p {
+    font-size: 16px;
+    color: #333;
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
 }
