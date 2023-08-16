@@ -1,0 +1,27 @@
+.footer_container {
+    height: 250px;
+    background-color: #333333;
+    color: white;
+}
+
+.footer_firstbox {
+    display: flex;
+    justify-content: space-between;
+    font-size: 32px;
+    margin: auto;
+    width: 90%;
+    height: 40%;
+    align-items: center;
+
+}
+
+.footer_secondbox{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+    color:  #FFFFFF99;
+    justify-content: center;
+}

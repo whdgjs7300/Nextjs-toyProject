@@ -1,17 +1,20 @@
 'use client'
 import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
+import { useRouter } from 'next/navigation';
+
 
 type DataProps = {
     item : CampingData,
 } 
 
 export default function OceanCard({item}: DataProps) {
-    
+    const router = useRouter();
 
 return (
     <div className={styles.ocean_imageCard}>
-        <div className={styles.roundedImage}>
+        <div onClick={()=>router.push(`/detail/${item.contentId}`)} 
+        className={styles.roundedImage}>
             <img
                 alt='Ocean Image'
                 src={item.firstImageUrl}

@@ -38,13 +38,13 @@ export default function ForestBanner() {
     };
     
     const [foreCampingData, setForeCampingData] = useState<CampingData[]>();
-
+    console.log(foreCampingData)
 
     useEffect(() => {
         async function loadData() {
             try {
-                const response = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=17&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=%EC%88%B2&_type=json`);
-                const data = response.data;
+                const response = await fetch(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=17&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=%EC%88%B2&_type=json`);
+                const data = await response.json();
                 setForeCampingData(data.response.body.items.item);
             } catch (error) {
                 console.error(error);
@@ -52,7 +52,7 @@ export default function ForestBanner() {
         }
         loadData();
     }, []);
-
+    
 
 
 return (

@@ -34,7 +34,7 @@ return (
             src='/banner3.jpg'
             alt="Background Image"
             fill={true}
-            objectFit="cover"
+            priority={true}
             style={imageStyle}
                 />
         
