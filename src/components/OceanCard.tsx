@@ -20,6 +20,9 @@ return (
                 src={item.firstImageUrl}
                 className={styles.image}
             />
+            <div className={styles.overlay}>
+                    <p>캠핑 정보 자세히 보기</p>
+                </div>
         </div>
         <div className={styles.ocean_cardContent}>
             <p>Feel the healing at the beach.
