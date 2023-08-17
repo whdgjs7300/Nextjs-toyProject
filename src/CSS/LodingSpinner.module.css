@@ -1,0 +1,13 @@
+.spinner_container {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.spinner_image {
+    width: 80px; /* 조절 가능한 스피너의 크기 */
+    height: 80px;
+}
+.spinner_container p{
+    font-size: 20px;
+}
