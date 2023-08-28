@@ -1,12 +1,17 @@
 import styles from '../CSS/Footer.module.css';
 import CardInfo from './CardInfo';
 
-export default function Board() {
+type DataProps = {
+    item :  ItemsData<LocationCampingData>,
+} 
+
+export default function Board({item} : DataProps) {
+    
 
 return (
     <div className={styles.board_container}>
         <div>
-            <CardInfo/>
+            <CardInfo item={item}/>
         </div>
     </div>
 )

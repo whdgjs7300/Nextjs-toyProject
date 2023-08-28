@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import styles from '../CSS/Footer.module.css';
 
-export default function CardInfo() {
+type DataProps = {
+    item : ItemsData<LocationCampingData>,
+} 
+
+export default function CardInfo({item}: DataProps) {
 
 return (
     <div className={styles.card_container}>
