@@ -52,9 +52,6 @@ export default  function CampBoard() {
     console.log(locationCamp)
     
 
-
-    
-
     if (isLoading) {
         return <LoadingSpinner />; 
     }
