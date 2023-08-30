@@ -6,12 +6,19 @@ type DataProps = {
 } 
 
 export default function Board({item} : DataProps) {
-    
+
 
 return (
     <div className={styles.board_container}>
         <div>
-            <CardInfo item={item}/>
+            {
+                item.items.item.map((locationData,i)=> (
+                    <div key={i}>
+                        <CardInfo item={locationData}/>
+                    </div>
+                ))
+            }
+            
         </div>
     </div>
 )
