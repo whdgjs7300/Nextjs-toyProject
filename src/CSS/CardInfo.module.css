@@ -49,7 +49,7 @@
   }
   
   .cardimg_box img {
-    width: 200px;
+    width: 250px;
     height: 200px;
     object-fit: cover;
 
@@ -67,7 +67,11 @@
 
   .card_detail ul {
     display: flex;
-    justify-content: space-between;
+    
+    
+  }
+  .card_detail li {
+    margin: auto;
   }
   
   .iconinfo {

@@ -18,6 +18,13 @@ export default  function CampBoard() {
     });
     const [isLoading, setIsLoading] = useState(true); 
 
+    const [currentPage, setCurrentPage] = useState<number>(0);
+    
+    const handlePageChange = (selectedPage: any) => {
+        
+        setCurrentPage(selectedPage.selected );
+    };
+    console.log(currentPage)
     const locationData = sessionStorage.getItem('location');
 
     // locationData 값이 있는 경우에만 파싱하여 lat와 lon 값을 가져오기
@@ -33,7 +40,7 @@ export default  function CampBoard() {
             if (lat && lon) {
                 try {
                     const response = await axios.get(
-                        `https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=${lon}&mapY=${lat}&radius=20000&_type=json`
+                        `https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage+1}&MobileOS=ETC&MobileApp=AppTest&mapX=${lon}&mapY=${lat}&radius=20000&_type=json`
                     );
 
                     const data = response.data.response.body;
@@ -48,7 +55,7 @@ export default  function CampBoard() {
         }
 
         getCampData();
-    }, [lat, lon]);
+    }, [lat, lon, currentPage]);
     console.log(locationCamp)
     
 
@@ -61,7 +68,11 @@ export default  function CampBoard() {
                 <h1>총 <span>{locationCamp.totalCount}개</span>의 주변 캠핑장이 검색되었습니다.</h1>
             </div>
             
-            <Board item={locationCamp}/>
+            <Board 
+            item={locationCamp}
+            currentPage={currentPage}
+            handlePageChange={handlePageChange}
+            />
         </div>
 
     

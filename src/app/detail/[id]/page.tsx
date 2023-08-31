@@ -15,6 +15,7 @@ export default function Detail() {
     const router = useRouter();
     
     useEffect(()=>{
+        // 여기에 이미지 api 불러와야함
         async function loadData() {
             try {
                 const response = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&MobileOS=ETC&MobileApp=AppTest&_type=json&numOfRows=3647`);

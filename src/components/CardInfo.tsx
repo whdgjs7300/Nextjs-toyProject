@@ -27,7 +27,8 @@ return (
         <div className={styles.card_detail}>
             <h2>
                 <Link className={styles.camp_title}
-                href='www.naver.com'>{item.facltNm}</Link>
+                target='blank'
+                href={item.homepage}>{item.facltNm}</Link>
             </h2>
             <p>일출과 바다 전망이 장관인 솔섬오토캠핑장</p>
             <p>{item.intro && item.intro.split('\n').slice(0, 2).map((line, index) => (
@@ -46,7 +47,8 @@ return (
     </div>
         
         {
-            item.sbrsCl ? <div className={styles.iconinfo}>
+            item.sbrsCl ? 
+            <div className={styles.iconinfo}>
             <ul>
             {item.sbrsCl.split(',').map((service, i) => (
             <li key={i}>
