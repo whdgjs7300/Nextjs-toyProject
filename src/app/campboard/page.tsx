@@ -35,6 +35,7 @@ export default  function CampBoard() {
         lat = storedLat;
         lon = storedLon;
     }
+    
     useEffect(() => {
         async function getCampData() {
             if (lat && lon) {
@@ -50,10 +51,8 @@ export default  function CampBoard() {
                     console.error(error);
                     setIsLoading(false);
                 }
-            }
-        
+            }    
         }
-
         getCampData();
     }, [lat, lon, currentPage]);
     console.log(locationCamp)
@@ -70,7 +69,6 @@ export default  function CampBoard() {
             
             <Board 
             item={locationCamp}
-            currentPage={currentPage}
             handlePageChange={handlePageChange}
             />
         </div>

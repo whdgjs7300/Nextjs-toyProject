@@ -132,3 +132,11 @@ type LocationCampingData = {
     wtrplCo: string;
     zipcode: string;
   };
+
+type DetailImageData = {
+    contentId: string;
+    createdtime: string;
+    imageUrl: string;
+    modifiedtime: string;
+    serialNumber: string;
+};
