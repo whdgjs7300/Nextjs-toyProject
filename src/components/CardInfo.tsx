@@ -7,7 +7,7 @@ type DataProps = {
 
 export default function CardInfo({item}: DataProps) {
 
-    console.log(item)
+    
 return (
     <div className={styles.card_container}>
         <div className={styles.info_box}>

@@ -20,11 +20,12 @@ export default function CampImage({item} : DataProps) {
         setSelectedImage(null);
     };
 
-    console.log(item)
+
 
 return (
 
     <div className={styles.image_container}>
+            
             <div className={styles.image_gallery}>
                 {item.map((image, i) => (
                     <div className={styles.image_item} key={i} onClick={() => openModal(image.imageUrl)}>

@@ -12,22 +12,13 @@ const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7
 export default function Detail() {
     
     const {id} = useParams();
-    console.log(id)
+    
     const [detailData,setDetailData] = useState<CampingData[]>();
     const [detailImages,setDetailImages] = useState<DetailImageData[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true); 
 
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-    const openModal = (imageUrl: string) => {
-        setSelectedImage(imageUrl);
-    };
-
-    const closeModal = () => {
-        setSelectedImage(null);
-    };
-
-
+    
+    
 
     const router = useRouter();
     //https://apis.data.go.kr/B551011/GoCamping/imageList?serviceKey=9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&contentId=3429
@@ -54,16 +45,20 @@ export default function Detail() {
     // 공공데이터 오픈 api 요청 파라미터값에 id 값이 없음 ...ㅠㅠㅠ 
     const matchingData = detailData?.find(item => item.contentId === id);
     console.log(detailImages)
-
+    console.log(matchingData)
 
     if (isLoading) {
         return <LoadingSpinner />; 
     }
 return (
     <div >
-        <h1>상세페이지</h1>
-        <p>{matchingData?.addr1}</p>
+        <div>
+            <h1>{matchingData?.facltNm}</h1>
+            <p>{matchingData?.lineIntro}</p>
+        </div>
+        <div>
 
+        </div>
         <CampImage item={detailImages}/>
     </div>
 )

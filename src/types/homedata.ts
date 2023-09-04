@@ -30,7 +30,7 @@ type CampingData = {
     mangeDivNm: string;
     mapX: string;
     mapY: string;
-
+    lineIntro : string
     modifiedtime: string;
     operDeCl: string;
     operPdCl: string;
