@@ -1,10 +1,12 @@
 "use client"
+import Image from 'next/image'
 import { useEffect, useState } from 'react';
-import styles from '../CSS/Home.module.css';
+import styles from '@/CSS/Detail.module.css';
 import axios from 'axios';
 import { useParams, useRouter } from "next/navigation";
 import LoadingSpinner from '@/components/LodingSpinner';
 import CampImage from '@/components/CampImage';
+import BasicInfo from '@/components/BasicInfo';
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
@@ -33,7 +35,8 @@ export default function Detail() {
                 const [detailData, imageListData] = await Promise.all([detailResponse, imageListResponse]);
                 
                 setDetailData(detailData.data.response.body.items.item);
-                setDetailImages(imageListData.data.response.body.items.item)
+                setDetailImages(imageListData.data.response.body.items.item);
+                
                 setIsLoading(false);
             } catch (error) {
                 console.error(error);
@@ -51,15 +54,25 @@ export default function Detail() {
         return <LoadingSpinner />; 
     }
 return (
-    <div >
-        <div>
+    <>
+    <div className={styles.detail_container}>
+        <Image 
+        src={matchingData?.lctCl === '해변' ? '/banner5.jpg' : '/banner4.jpg'} 
+        alt='detail banner'
+        fill={true}
+        ></Image>
+        <div className={styles.text_overlay}>
             <h1>{matchingData?.facltNm}</h1>
             <p>{matchingData?.lineIntro}</p>
         </div>
         <div>
-
+            
         </div>
-        <CampImage item={detailImages}/>
+        
     </div>
+    {matchingData && <BasicInfo item={matchingData} />}
+        <CampImage item={detailImages}/>
+    </>
+    
 )
 }

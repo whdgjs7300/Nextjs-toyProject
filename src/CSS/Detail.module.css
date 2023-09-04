@@ -1,0 +1,83 @@
+.detail_container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; 
+    height: 300px;
+}
+
+/* 이미지 */
+.detail_container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 텍스트 오버레이 */
+.text_overlay {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    border-radius: 5px; 
+    text-align: center;
+    color: white;
+
+}
+
+/* 텍스트 스타일 */
+.text_overlay h1 {
+    font-size: 62px; 
+    font-weight: 500;
+
+    margin: 0;
+    padding: 0;
+}
+
+.text_overlay p {
+    font-size: 32px; 
+    margin-top: 10px; 
+    padding: 0;
+}
+.text_overlay h1,
+.text_overlay p {
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* 그림자 효과 설정 (수평, 수직, 흐림 정도, 색상) */
+}
+
+/* 상세페이지 기본 정보 */
+
+.Info_container {
+    display: flex;
+    height: 500px;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+.Info_imgbox {
+    flex: 60%; 
+}
+
+.Info_textbox {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 26px;
+    height: 100%;
+}
+.Info_textbox ul {
+    list-style: none;
+
+}
+
+
+.Info_textbox li{
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 5px; 
+} 
+.Info_textbox ul li:last-child {
+    border-bottom: none; 
+}
+.Info_textbox ul li span {
+    color: #666; /* 연한 회색으로 텍스트 색상 지정 */
+  }

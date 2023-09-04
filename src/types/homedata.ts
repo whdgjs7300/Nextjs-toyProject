@@ -34,11 +34,11 @@ type CampingData = {
     modifiedtime: string;
     operDeCl: string;
     operPdCl: string;
-
+    lctCl: string;
     prmisnDe: string;
-
+    induty : string;
     sigunguNm: string;          // 구/군 이름
-    
+    posblFcltyCl : string;
     tel: string;
     themaEnvrnCl: string;
     toiletCo: string;
