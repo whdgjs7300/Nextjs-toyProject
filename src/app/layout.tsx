@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 // 폰트
 const dongle = Dongle({
-  weight : '400',
+  weight : '300',
   subsets : ['latin'],
   display : "swap",
   

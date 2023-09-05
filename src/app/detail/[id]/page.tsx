@@ -7,6 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import LoadingSpinner from '@/components/LodingSpinner';
 import CampImage from '@/components/CampImage';
 import BasicInfo from '@/components/BasicInfo';
+import DetailTag from '@/components/DetailTag';
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
@@ -71,6 +72,7 @@ return (
         
     </div>
     {matchingData && <BasicInfo item={matchingData} />}
+    {matchingData && <DetailTag item={matchingData}/> }
         <CampImage item={detailImages}/>
     </>
     

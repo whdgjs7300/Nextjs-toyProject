@@ -42,11 +42,15 @@ type CampingData = {
     tel: string;
     themaEnvrnCl: string;
     toiletCo: string;
-
+    posblFcltyEtc : string;
     trlerAcmpnyAt: string;
-
-
-
+    intro : string;
+    sbrsCl : string;
+    siteMg1Width: string;
+    siteMg1Vrticl : string;
+    siteBottomCl2 : string;
+    sitedStnc : string;
+    sbrsEtc : string;
 };
 
 type LocationCampingData = {
