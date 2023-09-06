@@ -1,0 +1,101 @@
+.search_container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; 
+    height: 350px;
+}
+
+.search_container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.box_container {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 50%;
+    max-height: 300px; 
+    margin: auto;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box_container h2 {
+    text-align: center;
+    margin: 0;
+}
+
+
+
+/* searchbox_form 스타일 */
+.searchbox_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+/* form1 스타일 */
+.form1 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* form1 p 태그 스타일 */
+    .form1 p {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    }
+
+    /* form1 input 스타일 */
+    .form1 input[type='text'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 95%;
+    font-size: 12px;
+    }
+
+    /* form2, form3 스타일 */
+    .form2, .form3 {
+    display: flex;
+    margin: 0; 
+    }
+
+    /* form2, form3 p 태그 스타일 */
+    .form2 p, .form3 p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+    }
+
+    /* form2, form3 select 스타일 */
+    .form2 select, .form3 select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 12px;
+    background-color: white;
+    }
+
+    /* option 스타일링 */
+    .searchbox_form option {
+    font-size: 16px;
+}
+
+.searchbox_form button{
+    width: 20%;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+}

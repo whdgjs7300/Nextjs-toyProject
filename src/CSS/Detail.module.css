@@ -88,7 +88,7 @@
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
-    border-bottom: 1px solid black;
+    
 }
 
 .firstInfo_intro {
@@ -142,7 +142,7 @@
 
 .firstInfo_textbox li{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
@@ -152,7 +152,19 @@
     border-bottom: none; 
 }
 .firstInfo_textbox ul li span {
+    
     color: #666; 
     margin-left: 50px;
+    text-align: center;
+    flex-grow: 1;
+    
+}
+.firstInfo_textbox p{
+    font-size: 18px;
+    border-top: 1px solid black;
+    padding: 20px;
+}
+.firstInfo_textbox p span{
+    color: red;
     
 }

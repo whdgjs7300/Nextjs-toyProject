@@ -41,7 +41,9 @@ return (
                 <li>사이트 크기 <span>{item.siteMg1Width}X{item.siteMg1Vrticl}: {Number(item.siteMg1Width) * Number(item.siteMg1Vrticl)+"개" || "정보 없음"}</span></li>
                 <li>캠핑장비대여 <span>{item.eqpmnLendCl || "정보 없음"}</span></li>
                 <li>화로대 <span>{item.brazierCl || "정보 없음"}</span></li>
+                
             </ul>
+            <p>* 등록된 정보는 현장상황과 다소 다를 수 있으니 <span>반려동물 동반 여부, 부가 시설물, 추가차량</span> 등 원활한 캠핑을 위해 꼭 필요한 사항은 해당 캠핑장에 미리 확인하시기 바랍니다.</p>
         </div>
 
     </div>
