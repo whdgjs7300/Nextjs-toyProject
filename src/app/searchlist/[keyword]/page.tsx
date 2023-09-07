@@ -20,6 +20,7 @@ return (
         
         
         <SearchBox/>
+        
     </div>
 )
 }
