@@ -21,7 +21,18 @@ export default function SearchList() {
     const keyWord = searchParams.get('keyWord');
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [searchList, setSearchList] = useState<CampingData[]>([]);
+    const [searchList, setSearchList] = useState<ItemsData<LocationCampingData>>({
+        items: { item: [] },
+        numOfRows: 0,
+        pageNo: "1",
+        totalCount: 0
+    });
+    const [currentPage, setCurrentPage] = useState<number>(0);
+    
+    const handlePageChange = (selectedPage: any) => {
+        
+        setCurrentPage(selectedPage.selected );
+    };
 
     console.log(selectedDoName, selectedTheme, keyWord);
     console.log(searchList)
@@ -29,7 +40,7 @@ export default function SearchList() {
         // 여기에 이미지 api 불러와야함
         async function loadData() {
             try {
-                const searchResponse = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=3686&pageNo=1&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`);                
+                const searchResponse = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`);                
                 const data = searchResponse.data.response.body;
               //  setDetailData(detailData.data.response.body.items.item);
                 setSearchList(data);
@@ -40,7 +51,7 @@ export default function SearchList() {
             }
         }
         loadData();
-    },[keyWord, selectedDoName, selectedTheme])
+    },[keyWord, selectedDoName, selectedTheme, currentPage])
 
 return (
     <div className={styles.search_container}>
@@ -52,7 +63,8 @@ return (
         
         
         <SearchBox/>
-        
+        <Board item={searchList} 
+        handlePageChange={handlePageChange}/>
     </div>
 )
 }

@@ -5,11 +5,11 @@ import CardInfo from './CardInfo';
 import ReactPaginate from 'react-paginate';
 
 type DataProps = {
-    item :  ItemsData<LocationCampingData>,
-    handlePageChange: (selectedPage: any) => void,
+    item :  ItemsData<LocationCampingData> ,
+    handlePageChange?: (selectedPage: any) => void,
 } 
 
-export default function Board({item,  handlePageChange } : DataProps) {
+export default function Board({item,  handlePageChange } : DataProps ) {
     
     console.log(item)
 
@@ -17,7 +17,7 @@ return (
     <div className={styles.board_container}>
         <div>
             {
-                item.items.item.map((locationData,i)=> (
+                item?.items.item.map((locationData,i)=> (
                     <div key={i}>
                         <CardInfo item={locationData}/>
                     </div>
