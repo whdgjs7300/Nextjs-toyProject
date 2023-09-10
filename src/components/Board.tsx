@@ -17,7 +17,7 @@ return (
     <div className={styles.board_container}>
         <div>
             {
-                item?.items.item.map((locationData,i)=> (
+                item && item.items?.item?.map((locationData,i)=> (
                     <div key={i}>
                         <CardInfo item={locationData}/>
                     </div>

@@ -11,7 +11,7 @@ import { data } from 'autoprefixer';
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
-
+// https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest
 export default function SearchList() {
 
     // SearchParams get으로 쿼리로 보낸 url 데이터를 가져와야함
@@ -37,11 +37,21 @@ export default function SearchList() {
     console.log(selectedDoName, selectedTheme, keyWord);
     console.log(searchList)
     useEffect(()=>{
-        // 여기에 이미지 api 불러와야함
+        let apiUrl = '';
+
+        if (keyWord) {
+            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`;
+        }
+        else {
+            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&_type=json`;
+        }
+        
         async function loadData() {
             try {
-                const searchResponse = await axios.get(`https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`);                
+                const searchResponse = await axios.get(apiUrl);                
                 const data = searchResponse.data.response.body;
+                let filteredData = data.items.item;
+        
               //  setDetailData(detailData.data.response.body.items.item);
                 setSearchList(data);
                 setIsLoading(false);
@@ -55,6 +65,7 @@ export default function SearchList() {
 
 return (
     <div className={styles.search_container}>
+        
         <Image 
         src='/banner4.jpg' 
         alt='detail banner'
