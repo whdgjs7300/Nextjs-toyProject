@@ -40,7 +40,7 @@ return (
                 <div className={styles.form2}>
                     
                     <select value={selectedDoName} onChange={(e) => setSelectedDoName(e.target.value)}>
-                    <option >전체/도</option>
+                    <option value='' >전체/도</option>
                     {
                         doName.map((doname, i) => (
                             <>
@@ -56,7 +56,7 @@ return (
                 <div className={styles.form3}>
                     
                     <select value={selectedTheme} onChange={(e) => setSelectedTheme(e.target.value)}>
-                    <option >전체테마</option>
+                    <option value=''>전체테마</option>
                         {
                             theme.map((tema,i)=>(
                                 <>

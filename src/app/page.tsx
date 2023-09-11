@@ -5,6 +5,7 @@ import ForestBanner from '../components/ForestBanner';
 import OceanBanner from '../components/OceanBanner';
 import { RecoilRoot, useRecoilValue } from 'recoil';
 import Location from '@/components/Location';
+import StoryBanner from '@/components/StoryBanner';
 
 export default  function Home() {
   
@@ -18,7 +19,7 @@ export default  function Home() {
       <Location/>
       <OceanBanner/>
       <ForestBanner  />
-      
+      <StoryBanner/>
       
       
 

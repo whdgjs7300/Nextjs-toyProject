@@ -34,7 +34,7 @@ export default function SearchList() {
         setCurrentPage(selectedPage.selected );
     };
 
-    console.log(selectedDoName, selectedTheme, keyWord);
+    
     console.log(searchList) 
     useEffect(()=>{
         let apiUrl = '';
@@ -56,7 +56,7 @@ export default function SearchList() {
                     setSearchList({ ...data, items: { item: filteredData } });
                 }
                 // 선택한 테마에 따라 필터링하는 코드를 추가하려면 여기에 추가하면 됩니다.
-
+                console.log(apiUrl)
                 
                 setIsLoading(false);
             } catch (error) {
