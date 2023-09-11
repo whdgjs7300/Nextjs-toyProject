@@ -35,7 +35,7 @@ export default function SearchList() {
     };
 
     console.log(selectedDoName, selectedTheme, keyWord);
-    console.log(searchList)
+    console.log(searchList) 
     useEffect(()=>{
         let apiUrl = '';
 
@@ -43,7 +43,7 @@ export default function SearchList() {
             apiUrl = `https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`;
         }
         else {
-            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&_type=json`;
+            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=3686&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&_type=json`;
         }
         
         async function loadData() {
@@ -51,9 +51,13 @@ export default function SearchList() {
                 const searchResponse = await axios.get(apiUrl);                
                 const data = searchResponse.data.response.body;
                 let filteredData = data.items.item;
-        
-              //  setDetailData(detailData.data.response.body.items.item);
-                setSearchList(data);
+                if (selectedDoName) {
+                    filteredData = filteredData.filter((item: LocationCampingData) => item.doNm === selectedDoName);
+                    setSearchList({ ...data, items: { item: filteredData } });
+                }
+                // 선택한 테마에 따라 필터링하는 코드를 추가하려면 여기에 추가하면 됩니다.
+
+                
                 setIsLoading(false);
             } catch (error) {
                 console.error(error);
