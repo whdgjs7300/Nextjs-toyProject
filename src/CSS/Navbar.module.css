@@ -29,3 +29,29 @@
     color: lightseagreen;
     border-bottom: 2px solid white; 
 }
+
+.main_container {
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_iconbox {
+    display: flex;
+    gap: 10px;
+}
+.main_imgbox {
+    margin-top: 10px;
+    
+}
+.main_searchbox {
+    font-size: 20px;
+}
+
+.main_searchbox input{
+    height: 30px;
+    width: 150px;
+}
+

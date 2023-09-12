@@ -4,6 +4,11 @@ import Navbar from '../components/Navbar';
 import './globals.css'
 import {Dongle} from 'next/font/google'
 import Footer from '../components/Footer';
+import MainNav from '@/components/MainNav';
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 
 // 폰트
 const dongle = Dongle({
@@ -27,6 +32,7 @@ export default function RootLayout({
   return (
     <html  className={dongle.className}>
       <body >
+        <MainNav/>
         <Navbar/>
         
         {children}

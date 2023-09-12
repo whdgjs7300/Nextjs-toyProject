@@ -6,7 +6,7 @@ return (
     <div className={styles.footer_container}>
         <div className={styles.footer_firstbox}>
             
-                <div>로고</div>
+                <div>아이콘</div>
                 <div>개인정보 처리 방침 </div>
                 <div>아이콘</div>
 
