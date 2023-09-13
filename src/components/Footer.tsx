@@ -13,9 +13,9 @@ return (
         </div>
         
         <div className={styles.footer_secondbox}>  
-            <div>주소, 전화번호 </div>
-            <div>이메일</div>
-            <div>Copyrights(c) 2018 KOREA TOURISM ORGANIZATION ALL RIGHTS RESERVED.</div> 
+            <div>서울특별시 관악구 봉천동 26-26 Tel : 010-4133-1692 </div>
+            <div>E-MAIL : whdgjs7300@naver.com</div>
+            <div>Copyrights(c) 2023 KOREA TOURISM ORGANIZATION ALL RIGHTS RESERVED.</div> 
         </div>
     </div>
 )

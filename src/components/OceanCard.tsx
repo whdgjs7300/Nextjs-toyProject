@@ -10,6 +10,8 @@ type DataProps = {
 
 export default function OceanCard({item}: DataProps) {
     const router = useRouter();
+console.log(item)
+
 
 return (
     <div className={styles.ocean_imageCard}>
@@ -25,11 +27,8 @@ return (
                 </div>
         </div>
         <div className={styles.ocean_cardContent}>
-            <p>Feel the healing at the beach.
-            Feel the healing at the beach.
-            Feel the healing at the beach.
-            Feel the healing at the beach.
-            </p>
+            <h2>{item.facltNm}</h2>
+            <p className={styles.introText}>{item.intro || item.lineIntro || item.featureNm}</p>
         </div>
     </div>
     

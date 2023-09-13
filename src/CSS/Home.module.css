@@ -77,9 +77,13 @@
     margin: 20px;
     border-radius: 60px; 
 }
+.imageCard:hover {
+    transform: scale(1.1);
+}
 
 .imageContainer {
     position: relative;
+    cursor: pointer;
     width: 100%;
     height: 200px; 
     overflow: hidden;
@@ -183,13 +187,26 @@
     padding: 0 20px;
     text-align: center; /* 추가: 내용 가운데 정렬 */
     background-color: white;
+    
+}
+.ocean_cardContent h2{
+    border-bottom: 1px solid #ccc;
+
 }
 
 .ocean_cardContent p {
     font-size: 16px;
     color: #333;
     text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    
 }
+.introText {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3줄로 제한 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 
 /* Story Banner */
 

@@ -7,7 +7,7 @@ export default function Navbar() {
             <ul className={styles.navList}>
                 <li className={styles.navItem}>
                     <Link className={styles.navLink} href="/">
-                        홈
+                        CAMPHUB
                     </Link>
                 </li>
                 <li className={styles.navItem}>

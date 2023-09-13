@@ -1,9 +1,29 @@
+'use client'
 import Link from "next/link";
 import styles from '../CSS/Navbar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass  } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import Router from 'next/router';
 
 export default function MainNav() {
+    const router = useRouter();
+    
+    const [keyWord, setKeyWord]= useState<string>('');
+    console.log(Router)
+    // any 타입 수정해야함
+    // const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    //     if (e.key === 'Enter') {
+    //         // Enter 키를 누르면 해당 경로로 이동
+            
+    //         router.push({
+    //             pathname: `/searchlist/list`,
+    //             query: { keyWord},
+    //         } as any);
+    //     }
+    // };
+
     return (
         <nav className={styles.main_container}>
             <div className={styles.main_iconbox}>
@@ -23,7 +43,7 @@ export default function MainNav() {
             </Link>
             <Link target='blank' href='https://blog.naver.com/gocamping_official'>
             <img 
-            src='naver.png' 
+            src='/naver.png' 
             alt='네이버 블로그'
             width={40}
             height={40} />
@@ -36,7 +56,8 @@ export default function MainNav() {
             height={40} />
             </Link>
             </div>
-            <div className={styles.main_imgbox}>
+            <div onClick={()=>router.push('/')}
+            className={styles.main_imgbox}>
                 <img 
                 alt="메인 아이콘"
                 src="/mainIcon.png"
@@ -45,10 +66,22 @@ export default function MainNav() {
                 />
             </div>
             <div className={styles.main_searchbox}>
-                <input type="text" name="nav_search"
+                <input 
+                onChange={(e)=>setKeyWord(e.target.value)}
+                type="text" name="nav_search"
                 placeholder="검색어를 입력하세요."
                 />
+                <Link 
+                href={{
+                    pathname: `/searchlist/list`,
+                    query: { 
+                            keyWord,
+                            }
+                    }}
+                className={styles.main_lastbox}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </Link>
+                
             </div>
         </nav>
     )
