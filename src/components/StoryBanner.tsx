@@ -26,13 +26,6 @@ return (
             width={250}
             height={250} />
             </Link>
-            <Link target='blank' href='https://yesscamp.co.kr/camping'>
-            <img 
-            src='/thingbanner.jpeg' 
-            alt='용품배너'
-            width={250}
-            height={250} />
-            </Link>
             <Link target='blank' href='https://www.weather.go.kr/w/index.do'>
             <img 
             src='/weatherbanner.png' 
@@ -40,6 +33,14 @@ return (
             width={250}
             height={250} />
             </Link>
+            <Link target='blank' href='https://yesscamp.co.kr/camping'>
+            <img 
+            src='/thingbanner.jpeg' 
+            alt='용품배너'
+            width={250}
+            height={250} />
+            </Link>
+            
         </div>
         
     </div>

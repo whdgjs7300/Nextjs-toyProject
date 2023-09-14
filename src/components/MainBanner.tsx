@@ -21,7 +21,7 @@ return (
                 
         </div>
         <div className={styles.textOverlay2}>
-        <p>관광사업자에 등록된 3686개의 캠핑장 정보가 있습니다.</p>
+        <p>"CAMPHUB"에는 관광사업자에 등록된 3686개의 캠핑장 정보가 있습니다.</p>
         </div>
         
         <SearchBox/>

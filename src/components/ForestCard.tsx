@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 import { useRouter } from 'next/navigation';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTree } from '@fortawesome/free-solid-svg-icons';
 
 type DataProps = {
     item : CampingData,
@@ -23,7 +24,11 @@ return (
         </div>
         <div className={styles.cardContent}>
             
-            <p>자연 속에서 힐링을 느껴보세요.</p>
+            <h2>{item.facltNm}</h2>
+            
+            <FontAwesomeIcon icon={faTree} />
+            
+            
         </div>
     </div>
     
