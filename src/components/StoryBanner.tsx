@@ -3,7 +3,7 @@ import styles from '../CSS/Home.module.css';
 import Link from 'next/link';
 
 export default function StoryBanner() {
-
+    // 맵핑해야함
 return (
     <div className={styles.story_container}>
         <h1>캠핑 <span>Story</span></h1> 

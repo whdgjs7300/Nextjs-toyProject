@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from '../CSS/Navbar.module.css';
 
 export default function Navbar() {
+    // Nav 모달 셋 
     return (
         <nav className={styles.navbar}>
             <ul className={styles.navList}>
