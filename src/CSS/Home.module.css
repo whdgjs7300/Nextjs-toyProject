@@ -67,6 +67,12 @@
     padding: 20px; 
 }
 
+
+.customSlickPrev {
+    border: 1px solid black;
+}
+
+
 /* 산림 캠핑카드 이미지 컴포넌트 */
 
 .imageCard {

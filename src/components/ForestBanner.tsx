@@ -6,7 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 import { useEffect, useState } from 'react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -14,11 +15,13 @@ const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7
 
 export default function ForestBanner() {
     const settings = {
-        dots: true,
         infinite: true,
+        arrows: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -34,7 +37,18 @@ export default function ForestBanner() {
                     slidesToScroll: 2,
                 }
             }
-        ]
+        ],
+        prevArrow: (
+            <button className={styles.customSlickPrev}>
+                <FontAwesomeIcon icon={faArrowLeft} />
+                
+            </button>
+        ),
+          nextArrow: 
+            <button className={styles.customSlickNext}>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          ,
     };
     
     const [foreCampingData, setForeCampingData] = useState<CampingData[]>();

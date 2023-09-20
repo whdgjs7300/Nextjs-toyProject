@@ -1,9 +1,28 @@
 import Link from 'next/link';
 import styles from '../CSS/CardInfo.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt, faWifi, faFire, faTemperatureHigh,faShoppingCart, faStore, faTint
+,faFutbol,faPlayCircle, faHiking, faPlay, faPersonFalling } from '@fortawesome/free-solid-svg-icons';
+
 
 type DataProps = {
-    item : LocationCampingData,
+    item : LocationCampingData ,
 } 
+
+const serviceIcons = {
+    전기: faBolt,
+    무선인터넷: faWifi,
+    장작판매: faFire,
+    온수: faTemperatureHigh,
+    마트: faShoppingCart,
+    편의점: faStore,
+    물놀이장 : faTint,
+    운동시설 : faFutbol,
+    놀이터 : faPlayCircle,
+    산책로 : faHiking,
+    운동장 : faPlay,
+    트렘폴린 : faPersonFalling,
+} as any;
 
 export default function CardInfo({item}: DataProps) {
 
@@ -46,18 +65,20 @@ return (
         </div>
     </div>
         
-        {
-            item.sbrsCl ? 
-            <div className={styles.iconinfo}>
-            <ul>
-            {item.sbrsCl.split(',').map((service, i) => (
-            <li key={i}>
-                <i><span>{service.trim()}</span></i>
-            </li>
-        ))}
-            </ul>
-        </div> : null
-        }
+    {
+                    item.sbrsCl ?
+                        <div className={styles.iconinfo}>
+                            <ul>
+                                {item.sbrsCl.split(',').map((service, i) => (
+                                    <li key={i}>
+                                        <i>
+                                            <span><FontAwesomeIcon icon={serviceIcons[service.trim()] || faShoppingCart } />{service.trim()}</span>
+                                        </i>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div> : null
+                }
         
     </div>
 )
