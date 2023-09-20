@@ -44,11 +44,11 @@ export default function ForestBanner() {
                 
             </button>
         ),
-          nextArrow: 
+        nextArrow: 
             <button className={styles.customSlickNext}>
-              <FontAwesomeIcon icon={faArrowRight} />
+                <FontAwesomeIcon icon={faArrowRight} />
             </button>
-          ,
+        ,
     };
     
     const [foreCampingData, setForeCampingData] = useState<CampingData[]>();
@@ -82,7 +82,7 @@ return (
                 if (item.firstImageUrl) {
                     return <ForestCard item={item} key={i} />;
                 }
-                return null; // Skip rendering for items without firstImageUrl
+                return null; 
             })}
         
             

@@ -29,7 +29,8 @@ export default async function OceanBanner() {
 
 return (
     <div className={styles.ocean_middle_container}>
-
+            <h1>파도 소리 들리는, 감성 캠핑 </h1>
+            <p>"한번쯤은" 꼭 가볼만한 캠핑장, CAPMHUB에서 추천합니다!</p>
         <Image
             src='/banner3.jpg'
             alt="Background Image"
@@ -39,7 +40,7 @@ return (
                 />
         
         
-        <h1>바다 별 캠핑 데이터 컴포넌트</h1>
+        
         <div className={styles.ocean_cardContainer}>
         {oceanData.map((item: CampingData, i: number) => {
                 if (item.firstImageUrl) {
