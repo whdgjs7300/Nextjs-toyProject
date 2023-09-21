@@ -24,6 +24,7 @@ export default function MainNav() {
     //     }
     // };
 
+    // 로그인 nav 만들어야 함 네브바 위에
     return (
         <nav className={styles.main_container}>
             <div className={styles.main_iconbox}>

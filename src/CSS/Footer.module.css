@@ -7,12 +7,28 @@
 .footer_firstbox {
     display: flex;
     justify-content: space-between;
-    font-size: 32px;
-    margin: auto;
-    width: 90%;
+    font-size: 26px;
     height: 40%;
     align-items: center;
+    margin: auto;
+    width: 90%;
+}
 
+.footer_iconbox {
+    display: flex;
+    gap: 20px;
+
+}
+.footer_icon {
+    margin-top: 15px;
+}
+.footer_icon img{
+    width: 100px;
+    height: 90px;
+}
+
+.footer_slice {
+    border-top: 1px solid #FFFFFF99;
 }
 
 .footer_secondbox{

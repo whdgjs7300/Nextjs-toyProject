@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Navbar() {
     // Nav 모달 셋 
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState<boolean>(false);
 
     const handleMouseEnter = () => {
         setIsSubMenuOpen(true);
