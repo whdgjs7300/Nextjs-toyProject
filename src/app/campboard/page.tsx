@@ -1,9 +1,10 @@
 'use client'
-
+import Image from 'next/image';
 import Board from "@/components/Board";
 import LoadingSpinner from "@/components/LodingSpinner";
 import axios from 'axios';
 import { useState, useEffect } from "react";
+import styles from '@/CSS/SearchList.module.css';
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
@@ -62,7 +63,12 @@ export default  function CampBoard() {
         return <LoadingSpinner />; 
     }
     return (
-        <div>
+        <div className={styles.search_container}>
+            <img 
+        src='/banner4.jpg' 
+        alt='searchList banner'
+        
+        ></img>
             <div>
                 <h1>총 <span>{locationCamp.totalCount}개</span>의 주변 캠핑장이 검색되었습니다.</h1>
             </div>

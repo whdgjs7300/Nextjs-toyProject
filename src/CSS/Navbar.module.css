@@ -1,7 +1,11 @@
 /* Navbar.module.css */
 
 .navbar {
-    background-color: lightblue; /* 연한 연두색 배경색 */
+    /*  #003458 
+    #364466 #34536d
+    */
+    text-align: center;
+    background-color: #364466; /* 연한 연두색 배경색 */
     padding: 10px 0;
 }
 
@@ -15,19 +19,48 @@
 }
 
 .navItem {
-    margin: 0 45px;
+    margin: 0 105px;
+    position: relative;
+    
+    
 }
 
 .navLink {
     text-decoration: none;
     color: white;
     font-size: 42px;
-    transition: color 0.3s;
+    
 }
 
 .navLink:hover {
-    color: lightseagreen;
-    border-bottom: 2px solid white; 
+    color: black;
+    border-bottom: 2px solid black; 
+}
+
+.subNavbar {
+    display: flex; /* 하위 모달을 가로로 정렬하기 위해 flex 사용 */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.subNavList {
+    list-style: none; 
+    padding: 0; 
+}
+.subNavItem {
+    margin: 10px; 
+    height: 80px;
+
+}
+
+.subNavLink {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    height: 100%; /* 하위 목록 아이템 내의 텍스트를 세로 중앙에 정렬 */
+    display: flex;
+    align-items: center;
 }
 
 .main_container {
@@ -70,4 +103,5 @@
     cursor: pointer;
     color: black;
 }
+
 

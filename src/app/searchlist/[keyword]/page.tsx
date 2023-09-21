@@ -72,12 +72,13 @@ return (
         
         <Image 
         src='/banner4.jpg' 
-        alt='detail banner'
+        alt='searchList banner'
         fill={true}
         ></Image>
         
         
         <SearchBox/>
+        
         <Board item={searchList} 
         handlePageChange={handlePageChange}/>
     </div>
