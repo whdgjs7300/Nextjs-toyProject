@@ -16,6 +16,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    
 }
 
 .navItem {
@@ -42,6 +43,9 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    
+    
+    
 }
 
 .subNavList {
@@ -55,6 +59,7 @@
 }
 
 .subNavLink {
+    
     text-decoration: none;
     color: white;
     font-size: 24px;
