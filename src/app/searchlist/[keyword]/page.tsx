@@ -70,11 +70,13 @@ export default function SearchList() {
 return (
     <div className={styles.search_container}>
         
-        <Image 
+        <img 
+            className={styles.search_banner}
         src='/banner4.jpg' 
         alt='searchList banner'
-        fill={true}
-        ></Image>
+        >
+            
+        </img>
         
         
         <SearchBox/>

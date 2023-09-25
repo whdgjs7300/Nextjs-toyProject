@@ -74,7 +74,13 @@ export default function Navbar() {
                 <div className={styles.subNavbar}>
                     <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/customer1">
+                            <Link className={styles.subNavLink} 
+                            href={{
+                                pathname: `/zboard/list?code=notice`,
+                                query: { 
+                                    
+                                        }
+                                }}>
                                 공지사항
                             </Link>
                         </li>

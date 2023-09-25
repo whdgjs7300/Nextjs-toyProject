@@ -25,8 +25,9 @@ export default  function CampBoard() {
         
         setCurrentPage(selectedPage.selected );
     };
-    console.log(currentPage)
+    
     const locationData = sessionStorage.getItem('location');
+    console.log(locationData);
 
     // locationData 값이 있는 경우에만 파싱하여 lat와 lon 값을 가져오기
     let lat: number | null = null;
@@ -65,12 +66,13 @@ export default  function CampBoard() {
     return (
         <div className={styles.search_container}>
             <img 
+            className={styles.search_banner}
         src='/banner4.jpg' 
         alt='searchList banner'
         
         ></img>
-            <div>
-                <h1>총 <span>{locationCamp.totalCount}개</span>의 주변 캠핑장이 검색되었습니다.</h1>
+            <div className={styles.search_title}>
+                <h1>총 <span>"{locationCamp.totalCount}개"</span>의 주변 캠핑장이 검색되었습니다.</h1>
             </div>
             
             <Board 
