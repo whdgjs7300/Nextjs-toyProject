@@ -27,7 +27,11 @@ return (
                 <li>캠핑장 유형 : <span>{item.induty}</span></li>
                 <li>운영기간 : <span>{item.operPdCl}</span></li>
                 <li>운영일 : <span>{item.operDeCl}</span></li>
-                <li>홈페이지 : <Link target='blank' href={item.homepage}>{item.homepage || "정보 없음"}</Link></li>
+                <li>홈페이지 : 
+                    {
+                        item?.homepage ? <Link target='blank' href={item.homepage}>바로가기</Link> : <span> 정보 없음</span>
+                    }
+                    </li>
                 <li>주변이용 시설 : <span>{item.posblFcltyCl || item.posblFcltyEtc || "정보 없음"}</span></li>
             </ul>
         </div>

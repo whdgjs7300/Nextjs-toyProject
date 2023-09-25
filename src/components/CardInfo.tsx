@@ -46,8 +46,7 @@ return (
         <div className={styles.card_detail}>
             <h2>
                 <Link className={styles.camp_title}
-                target='blank'
-                href={item.homepage}>{item.facltNm}</Link>
+                href={`detail/${item.contentId}`}>{item.facltNm}</Link>
             </h2>
             <p>일출과 바다 전망이 장관인 솔섬오토캠핑장</p>
             <p>{item.intro && item.intro.split('\n').slice(0, 2).map((line, index) => (

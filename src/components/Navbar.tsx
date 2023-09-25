@@ -28,12 +28,12 @@ export default function Navbar() {
                     {/* 서브 네브바 내용 */}
                     <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/details1">
+                            <Link className={styles.subNavLink} href="/searchlist/basic">
                                 캠핑장 검색하기
                             </Link>
                         </li>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/details2">
+                            <Link className={styles.subNavLink} href="/searchlist/map">
                                 지도로 검색하기
                             </Link>
                         </li>
@@ -51,12 +51,24 @@ export default function Navbar() {
                 <div className={styles.subNavbar}>
                     <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/news1">
+                            <Link className={styles.subNavLink} 
+                            href={{
+                                pathname: `/zboard/list`,
+                                query: { 
+                                        code : "campNews"
+                                        }
+                                }}>
                                 캠핑소식
                             </Link>
                         </li>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/news2">
+                            <Link className={styles.subNavLink} 
+                            href={{
+                                pathname: `/zboard/list`,
+                                query: { 
+                                        code : "campSafe"
+                                        }
+                                }}>
                                 안전한 캠핑즐기기
                             </Link>
                         </li>
@@ -76,16 +88,22 @@ export default function Navbar() {
                         <li className={styles.subNavItem}>
                             <Link className={styles.subNavLink} 
                             href={{
-                                pathname: `/zboard/list?code=notice`,
+                                pathname: `/zboard/list`,
                                 query: { 
-                                    
+                                        code : "notice"
                                         }
                                 }}>
                                 공지사항
                             </Link>
                         </li>
                         <li className={styles.subNavItem}>
-                            <Link className={styles.subNavLink} href="/customer2">
+                            <Link className={styles.subNavLink} 
+                            href={{
+                                pathname: `/zboard/list`,
+                                query: { 
+                                        code : "campRequest"
+                                        }
+                                }}>
                                 문의 및 수정요청
                             </Link>
                         </li>

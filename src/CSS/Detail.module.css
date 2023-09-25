@@ -41,14 +41,37 @@
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* 그림자 효과 설정 (수평, 수직, 흐림 정도, 색상) */
 }
 
+/* 디테일 navtag */
+.detail_navtag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 5px;
+}
+
+.detail_navtag button{
+    background-color: #364466; /* 버튼 배경색 */
+    color: white; 
+    padding: 15px 70px; 
+    cursor: pointer; 
+    font-size: 16px;
+
+}
+.activeButton {
+    background-color: white !important; /* 배경색을 흰색으로 고정 */
+    color: black !important; /* 텍스트 색상을 검정색으로 고정 */
+}
+
 /* 상세페이지 기본 정보 */
 
 .Info_container {
     display: flex;
     height: 500px;
-    width: 95%;
+    width: 85%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .Info_imgbox {
     flex: 60%; 

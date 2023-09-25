@@ -7,6 +7,7 @@ import ReactPaginate from 'react-paginate';
 type DataProps = {
     item :  ItemsData<LocationCampingData> ,
     handlePageChange?: (selectedPage: any) => void,
+    
 } 
 
 export default function Board({item,  handlePageChange } : DataProps ) {

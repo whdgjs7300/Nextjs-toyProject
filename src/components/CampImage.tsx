@@ -27,7 +27,7 @@ return (
     <div className={styles.image_container}>
             <h2>캠핑장 이미지 보기</h2>
             <div className={styles.image_gallery}>
-                {item.map((image, i) => (
+                {item?.map((image, i) => (
                     <div className={styles.image_item} key={i} onClick={() => openModal(image.imageUrl)}>
                         <img src={image.imageUrl} alt={`Image ${i}`} />
                         

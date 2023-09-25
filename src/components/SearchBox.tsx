@@ -5,14 +5,14 @@ import {doName, theme} from '../data/searchBox';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-
+// 라우터 쿼리문 수정 및 리팩토링
 
 export default function SearchBox() {
     const [selectedDoName, setSelectedDoName] = useState(''); 
     const [selectedTheme, setSelectedTheme] = useState('');
     const [keyWord, setKeyWord] = useState('');
     const router = useRouter();
-
+    
     
     console.log(router)
 
