@@ -35,7 +35,7 @@ export default function SearchList() {
     };
 
     
-    console.log(searchList) 
+    console.log(keyWord) 
     useEffect(()=>{
         let apiUrl = '';
 
@@ -51,13 +51,21 @@ export default function SearchList() {
                 const searchResponse = await axios.get(apiUrl);                
                 const data = searchResponse.data.response.body;
                 let filteredData = data.items.item;
-                if (selectedDoName) {
+                if (selectedDoName && selectedTheme) {
+                    // selectedDoName과 selectedTheme이 모두 있는 경우
+                    filteredData = filteredData.filter((item: LocationCampingData) => {
+                        return item.doNm === selectedDoName && item.lctCl.includes(selectedTheme);
+                    });
+                } else if (selectedDoName) {
+                    // selectedDoName만 있는 경우
                     filteredData = filteredData.filter((item: LocationCampingData) => item.doNm === selectedDoName);
-                    setSearchList({ ...data, items: { item: filteredData } });
+                } else if (selectedTheme) {
+                    // selectedTheme만 있는 경우
+                    filteredData = filteredData.filter((item: LocationCampingData) => item.lctCl.includes(selectedTheme));
                 }
                 // 선택한 테마에 따라 필터링하는 코드를 추가하려면 여기에 추가하면 됩니다.
-                console.log(apiUrl)
-                
+                console.log(filteredData);
+                setSearchList(filteredData);
                 setIsLoading(false);
             } catch (error) {
                 console.error(error);

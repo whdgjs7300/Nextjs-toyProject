@@ -5,6 +5,8 @@ type ItemsData<T> = {
     numOfRows: number;
     pageNo: string;
     totalCount: number;
+    length : number;
+    
 };
 
 type CampingData = {
