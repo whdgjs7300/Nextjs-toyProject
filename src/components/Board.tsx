@@ -4,32 +4,45 @@ import styles from '../CSS/Board.module.css';
 import CardInfo from './CardInfo';
 import ReactPaginate from 'react-paginate';
 
+// 지저분한 컴포넌트 리팩토링 꼭해야함 !
+
 type DataProps = {
-    item :  ItemsData<LocationCampingData> ,
+    locationData? :  ItemsData<LocationCampingData> | undefined ,
     handlePageChange?: (selectedPage: any) => void,
-    
+    searchData? :  LocationCampingData[] | undefined,
+    currentPage? : number,
 } 
 
-export default function Board({item,  handlePageChange } : DataProps ) {
+export default function Board({locationData,searchData, handlePageChange,currentPage = 0 } : DataProps ) {
+    const itemsPerPage = 10;
+    console.log()
     
-    console.log(item.length)
 
 return (
     <div className={styles.board_container}>
         <div>
-            {   // 여기 수정해야함 , campboard랑, searchList에서 보내는 데이터가 틀림
-                item && item.items?.item?.map((locationData,i)=> (
-                    <div key={i}>
-                        <CardInfo item={locationData}/>
-                    </div>
-                ))
-            }
+        {// searchData가 존재하면 10개씩 데이터를 잘라서 출력
+                    (searchData
+                        ?.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
+                        .map((data, i) => (
+                            <div key={i}>
+                                <CardInfo item={data} />
+                            </div>
+                        )))
+                    ||
+                    (locationData?.items?.item
+                        ?.map((data, i) => (
+                            <div key={i}>
+                                <CardInfo item={data} />
+                            </div>
+                        )))
+                }
             <ReactPaginate
         breakLabel="..."
         nextLabel=">"
         onPageChange={handlePageChange}
         pageRangeDisplayed={5}
-        pageCount={Math.ceil(item.totalCount / 10) ||Math.ceil(item.length / 10) }
+        pageCount={locationData?.totalCount ? Math.ceil(locationData.totalCount / 10) : (searchData ? Math.ceil(searchData.length / 10) : 1)}
         previousLabel="<"
         renderOnZeroPageCount={null}
         containerClassName={styles.pagination_container}
@@ -41,7 +54,7 @@ return (
         nextLinkClassName={styles.pagination_link}
         disabledClassName={styles.pagination_disabled}
         disabledLinkClassName={styles.pagination_disabled_link}
-        
+        forcePage={0}
         />
         </div>
     </div>

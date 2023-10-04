@@ -21,13 +21,7 @@ export default function SearchList() {
     const keyWord = searchParams.get('keyWord');
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [searchList, setSearchList] = useState<ItemsData<LocationCampingData>>({
-        items: { item: [] },
-        numOfRows: 0,
-        pageNo: "1",
-        totalCount: 0,
-        length : 0,
-    });
+    const [searchList, setSearchList] = useState<LocationCampingData[]>();
     const [currentPage, setCurrentPage] = useState<number>(0);
     
     const handlePageChange = (selectedPage: any) => {
@@ -90,7 +84,8 @@ return (
         
         <SearchBox/>
         
-        <Board item={searchList} 
+        <Board searchData={searchList} 
+        currentPage={currentPage}
         handlePageChange={handlePageChange}/>
     </div>
 )

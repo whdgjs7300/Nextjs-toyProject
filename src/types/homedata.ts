@@ -5,7 +5,7 @@ type ItemsData<T> = {
     numOfRows: number;
     pageNo: string;
     totalCount: number;
-    length : number;
+
     
 };
 
@@ -53,6 +53,7 @@ type CampingData = {
     siteBottomCl2 : string;
     sitedStnc : string;
     sbrsEtc : string;
+    length : number;
 };
 
 type LocationCampingData = {
@@ -137,6 +138,8 @@ type LocationCampingData = {
     trsagntNo: string;
     wtrplCo: string;
     zipcode: string;
+    
+    length : number;
   };
 
 type DetailImageData = {

@@ -16,7 +16,6 @@ export default  function CampBoard() {
         numOfRows: 0,
         pageNo: "1",
         totalCount: 0,
-        length : 0,
     });
     const [isLoading, setIsLoading] = useState(true); 
 
@@ -77,7 +76,7 @@ export default  function CampBoard() {
             </div>
             
             <Board 
-            item={locationCamp}
+            locationData={locationCamp}
             handlePageChange={handlePageChange}
             />
         </div>
