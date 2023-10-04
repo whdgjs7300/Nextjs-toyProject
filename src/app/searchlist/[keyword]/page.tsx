@@ -25,7 +25,8 @@ export default function SearchList() {
         items: { item: [] },
         numOfRows: 0,
         pageNo: "1",
-        totalCount: 0
+        totalCount: 0,
+        length : 0,
     });
     const [currentPage, setCurrentPage] = useState<number>(0);
     
@@ -35,7 +36,7 @@ export default function SearchList() {
     };
 
     
-    console.log(keyWord) 
+    console.log(searchList) 
     useEffect(()=>{
         let apiUrl = '';
 

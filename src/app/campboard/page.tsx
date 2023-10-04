@@ -15,7 +15,8 @@ export default  function CampBoard() {
         items: { item: [] },
         numOfRows: 0,
         pageNo: "1",
-        totalCount: 0
+        totalCount: 0,
+        length : 0,
     });
     const [isLoading, setIsLoading] = useState(true); 
 
