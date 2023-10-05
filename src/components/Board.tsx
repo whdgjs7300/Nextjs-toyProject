@@ -15,7 +15,7 @@ type DataProps = {
 
 export default function Board({locationData,searchData, handlePageChange,currentPage = 0 } : DataProps ) {
     const itemsPerPage = 10;
-    console.log()
+    console.log(currentPage);
     
 
 return (
@@ -54,7 +54,7 @@ return (
         nextLinkClassName={styles.pagination_link}
         disabledClassName={styles.pagination_disabled}
         disabledLinkClassName={styles.pagination_disabled_link}
-        forcePage={0}
+        forcePage={currentPage}
         />
         </div>
     </div>

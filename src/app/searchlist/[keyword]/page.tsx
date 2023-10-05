@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import SearchBox from '@/components/SearchBox';
 import Board from '@/components/Board';
 import {useSearchParams} from 'next/navigation';
-import { data } from 'autoprefixer';
+
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
@@ -38,9 +38,9 @@ export default function SearchList() {
             apiUrl = `https://apis.data.go.kr/B551011/GoCamping/searchList?serviceKey=${API_KEY}&numOfRows=10&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&keyword=${keyWord}&_type=json`;
         }
         else {
-            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=3686&pageNo=${currentPage + 1}&MobileOS=ETC&MobileApp=AppTest&_type=json`;
+            apiUrl = `https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=3686&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json`;
         }
-        
+
         async function loadData() {
             try {
                 const searchResponse = await axios.get(apiUrl);                
