@@ -5,7 +5,7 @@
     #364466 #34536d
     */
     text-align: center;
-    background-color: #364466; /* 연한 연두색 배경색 */
+    border: 1px solid #dedede;
     padding: 10px 0;
 }
 
@@ -28,7 +28,7 @@
 
 .navLink {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 42px;
     
 }
@@ -61,7 +61,7 @@
 .subNavLink {
     
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 24px;
     height: 100%; /* 하위 목록 아이템 내의 텍스트를 세로 중앙에 정렬 */
     display: flex;
