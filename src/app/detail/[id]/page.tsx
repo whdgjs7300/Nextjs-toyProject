@@ -58,7 +58,7 @@ return (
     <>
     <div className={styles.detail_container}>
         <Image 
-        src={matchingData?.lctCl === '해변' ? '/banner5.jpg' : '/banner4.jpg'} 
+        src={matchingData?.lctCl === '해변' ? '/detailbanner1.jpg' : '/detailbanner2.jpg'} 
         alt='detail banner'
         fill={true}
         ></Image>

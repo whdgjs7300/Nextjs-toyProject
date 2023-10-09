@@ -32,7 +32,7 @@ return (
             <h1>파도 소리 들리는, 감성 캠핑 </h1>
             <p>"한번쯤은" 꼭 가볼만한 캠핑장, CAPMHUB에서 추천합니다!</p>
         <Image
-            src='/banner3.jpg'
+            src='/oceanbanner.jpg'
             alt="Background Image"
             fill={true}
             priority={true}

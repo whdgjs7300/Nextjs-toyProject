@@ -75,7 +75,7 @@ return (
         
         <img 
             className={styles.search_banner}
-        src='/banner4.jpg' 
+        src='/detailbanner1.jpg' 
         alt='searchList banner'
         >
             

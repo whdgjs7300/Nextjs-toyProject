@@ -1,14 +1,35 @@
+'use client'
 import Image from 'next/image'
 import styles from '../CSS/Home.module.css';
 import SearchBox from './SearchBox';
+import { useState,useEffect } from 'react';
 
 export default function MainBanner() {
+
+    const [imageIndex, setImageIndex] = useState(1);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          // 3초마다 이미지 인덱스 업데이트
+            setImageIndex((prevIndex) => (prevIndex % 4) + 1);
+        }, 5000);
+    
+        return () => {
+          // 컴포넌트 언마운트 시 clearInterval
+            clearInterval(interval);
+        };
+    }, []);
+    
+      // 현재 이미지 인덱스에 따라 이미지 경로 설정
+    const getImageSrc = () => {
+        return `/banner${imageIndex}.jpg`;
+    };
 
 return (
     <div className={styles.banner}>
         <Image 
         alt='Main Banner' 
-        src='/banner1.jpg'
+        src={getImageSrc()}
         fill={true} // 상위 태그 크기에 채우기 
         priority = {false}
         />
