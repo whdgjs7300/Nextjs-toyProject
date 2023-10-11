@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import Board from "@/components/Board";
+import CardBoard from "@/components/CardBoard";
 import LoadingSpinner from "@/components/LodingSpinner";
 import axios from 'axios';
 import { useState, useEffect } from "react";
@@ -75,7 +75,7 @@ export default  function CampBoard() {
                 <h1>총 <span>"{locationCamp.totalCount}개"</span>의 주변 캠핑장이 검색되었습니다.</h1>
             </div>
             
-            <Board 
+            <CardBoard 
             locationData={locationCamp}
             handlePageChange={handlePageChange}
             />

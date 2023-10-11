@@ -5,7 +5,7 @@ import LoadingSpinner from "@/components/LodingSpinner";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import SearchBox from '@/components/SearchBox';
-import Board from '@/components/Board';
+import CardBoard from '@/components/CardBoard';
 import {useSearchParams} from 'next/navigation';
 
 
@@ -84,7 +84,7 @@ return (
         
         <SearchBox/>
         
-        <Board searchData={searchList} 
+        <CardBoard searchData={searchList} 
         currentPage={currentPage}
         handlePageChange={handlePageChange}/>
     </div>
