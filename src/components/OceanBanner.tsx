@@ -29,8 +29,11 @@ export default async function OceanBanner() {
 
 return (
     <div className={styles.ocean_middle_container}>
+            <div className={styles.ocean_titlebox}>
             <h1>파도 소리 들리는, 감성 캠핑 </h1>
-            <p>"한번쯤은" 꼭 가볼만한 캠핑장, CAPMHUB에서 추천합니다!</p>
+            <h2>"한번쯤은" 꼭 가볼만한 캠핑장, CAPMHUB에서 추천합니다!</h2>
+            </div>
+            
         <Image
             src='/oceanbanner.jpg'
             alt="Background Image"

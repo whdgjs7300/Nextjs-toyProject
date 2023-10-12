@@ -74,7 +74,7 @@ return (
         <div className={styles.bannerContainer}>  
         <div className={styles.forest_middle_container}>
             <h1 >힐링을 위한 상쾌한 산림 캠핑</h1>
-            <p>""에서 추천하는 이달의 캠핑 </p>
+            <h2>"CAPMHUB"에서 추천하는 이달의 캠핑 </h2>
         </div>
         
         <Slider {...settings}>

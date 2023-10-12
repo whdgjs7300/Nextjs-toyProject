@@ -6,8 +6,11 @@ export default function StoryBanner() {
     // 맵핑해야함
 return (
     <div className={styles.story_container}>
-        <h1>캠핑 <span>Story</span></h1> 
-        <p>캠핑가기전 정보와 소식을 확인하세요 ! </p>
+        <div className={styles.story_title}>
+            <h1>캠핑 <span>Story</span></h1> 
+            <h2>캠핑가기전 정보와 소식을 확인하세요 ! </h2>
+        </div>
+        
 
 
         <div className={styles.story_imgbox}>

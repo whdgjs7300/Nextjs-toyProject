@@ -54,15 +54,17 @@
 /* 산림 배너 컴포넌트 CSS */
 
 .forest_middle_container {
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
-    
+    margin-bottom: 30px;
 }
-.middle_container h1 {
-    font-size: 50px;
+.forest_middle_container h1 {
+    font-size: 52px;
+    margin: 0;
 }
-.middle_container p {
-    font-size: 32px;
+.forest_middle_container h2 {
+    font-size: 30px;
+    margin: 0;
 }
 
 
@@ -156,6 +158,18 @@
     margin-top: 20px;
     
 }
+.ocean_titlebox {
+    margin-bottom: 100px;
+}
+
+.ocean_titlebox h1{
+    font-size: 52px;
+    margin: 0;
+}
+.ocean_titlebox h2{
+    font-size: 30px;
+    margin: 0;
+}
 
 
 .ocean_imageCard {
@@ -238,23 +252,32 @@
     width: 100%;
     text-align: center;
 }
-
-.story_container h1{
-    font-size: 42px;
-    color: darkslateblue;
+.story_title {
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
-.story_container h1 span{
+
+.story_title h1 {
+    font-size: 52px;
+    color: darkslateblue;
+    margin: 0;
+}
+.story_title h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+
+.story_title h1 span{
     font-size: 32px;
     color: black;
 }
-.story_container p{
-    font-size: 28px;
-}
+
 .story_imgbox {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
   
   .story_imgbox img {
     max-width: 100%;
