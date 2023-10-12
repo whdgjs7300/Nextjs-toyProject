@@ -55,3 +55,39 @@
 .pagination_next:hover {
     color: #007bff;
 }
+
+
+/* 게시판 테이블 스타일 */
+.table_list {
+  width: 100%; /* 테이블 전체 너비를 화면 너비에 맞춥니다. */
+  border-collapse: collapse; /* 셀 경계를 병합하여 깔끔하게 표시합니다. */
+  margin: 20px 0; /* 위아래 여백을 조절합니다. */
+}
+
+.table_list th, .table_list td {
+  padding: 10px; /* 셀 안의 여백을 조절합니다. */
+  text-align: center; /* 텍스트를 가운데 정렬합니다. */
+  border: 1px solid #ccc; /* 셀 테두리를 설정합니다. */
+}
+
+/* 머리글 행 스타일 */
+.table_list thead {
+  background-color: #dedede; /* 머리글 배경색을 설정합니다. */
+  color: black; /* 머리글 텍스트 색상을 설정합니다. */
+}
+
+/* 머리글 셀 스타일 */
+.table_list th {
+  font-weight: bold; /* 머리글 텍스트에 굵은 스타일을 적용합니다. */
+}
+
+/* 짝수 행 스타일 */
+.table_list tbody tr:nth-child(even) {
+  background-color: #f4f4f4; /* 짝수 행 배경색을 설정합니다. */
+}
+
+/* 게시판 컨테이너 스타일 */
+.boardcard_container {
+  margin: 20px; /* 게시판 컨테이너 주변 여백을 설정합니다. */
+  overflow: auto; /* 내용이 테이블 너비를 벗어나면 스크롤 표시됩니다. */
+}
