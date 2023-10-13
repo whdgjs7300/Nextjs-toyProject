@@ -68,6 +68,7 @@
 }
 
 
+
 .bannerContainer {
     height: 600px; 
     background-color: #f0f8ff; 
@@ -160,6 +161,13 @@
 }
 .ocean_titlebox {
     margin-bottom: 100px;
+}
+
+.icon {
+    margin-left: 10px;
+    color: #34536d;
+    font-size: 25px;
+    
 }
 
 .ocean_titlebox h1{

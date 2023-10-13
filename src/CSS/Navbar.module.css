@@ -68,6 +68,29 @@
     align-items: center;
 }
 
+.loginnav_container {
+    height: 35px;
+    display: flex;
+    justify-content: flex-end; /* 링크를 오른쪽으로 정렬합니다 */
+    text-align: center;
+    align-items: center;
+    font-size: 20px; 
+    background-color: rgba(240, 240, 240, 0.8);
+    border-bottom: 1px solid #dedede;
+}
+.loginnav_container a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    margin: 0 3px; /* 각 링크 사이에 간격을 조절 */
+    border-right: 1px solid #dedede; /* 수직 구분선 추가 */
+    padding: 0 20px; /* 수직 구분선과 링크 사이에 간격을 조절 */
+    color: black;
+}
+
+.loginnav_container a:last-child {
+    border-right: none; /* 마지막 링크의 수직 구분선을 제거 */
+}
+
+
 .main_container {
     height: 100px;
     width: 80%;

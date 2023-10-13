@@ -24,7 +24,7 @@ export default function Zboard() {
     
     console.log(code)
 
-
+    
     return (
         <div >
             {code === 'notice' && <Board code={code} title="공지사항" handlePageChange={handlePageChange} />}

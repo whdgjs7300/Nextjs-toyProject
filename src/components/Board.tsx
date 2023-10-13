@@ -20,6 +20,7 @@ return (
             <i>아이콘</i><h1>{title}</h1>
         </div>
         
+        
         <BoardCard />
 
         

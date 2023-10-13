@@ -26,7 +26,16 @@ export default function MainNav() {
 
     // 로그인 nav 만들어야 함 네브바 위에
     return (
+        <>
+            <nav className={styles.loginnav_container}>
+                <Link href='/'>로그인</Link>
+                <Link href='/'>로그아웃</Link>
+                <Link href='/'>마이페이지</Link>
+                <Link href='/'>사이트맵</Link>
+            </nav>
+
         <nav className={styles.main_container}>
+            
             <div className={styles.main_iconbox}>
             <Link target='blank' href='https://www.instagram.com/gocamping_official/'>
             <img 
@@ -85,5 +94,7 @@ export default function MainNav() {
                 
             </div>
         </nav>
+        </>
+        
     )
 }

@@ -1,13 +1,18 @@
 import Image from 'next/image';
 import styles from '../CSS/Home.module.css';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCampground } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function StoryBanner() {
     // 맵핑해야함
 return (
     <div className={styles.story_container}>
         <div className={styles.story_title}>
-            <h1>캠핑 <span>Story</span></h1> 
+            <h1>캠핑 <span>Story</span>
+            <FontAwesomeIcon icon={faCampground} className={styles.icon} />
+            </h1> 
             <h2>캠핑가기전 정보와 소식을 확인하세요 ! </h2>
         </div>
         

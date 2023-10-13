@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight,faCampground } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -73,7 +73,9 @@ return (
     <>
         <div className={styles.bannerContainer}>  
         <div className={styles.forest_middle_container}>
-            <h1 >힐링을 위한 상쾌한 산림 캠핑</h1>
+            <h1 >힐링을 위한 상쾌한 산림 캠핑
+            <FontAwesomeIcon icon={faCampground} className={styles.icon} />
+            </h1>
             <h2>"CAPMHUB"에서 추천하는 이달의 캠핑 </h2>
         </div>
         
