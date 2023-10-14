@@ -8,19 +8,20 @@ type DataProps = {
 } 
 
 const serviceIcons = {
-    전기: faBolt,
-    무선인터넷: faWifi,
-    장작판매: faFire,
-    온수: faTemperatureHigh,
-    마트: faShoppingCart,
-    편의점: faStore,
-    물놀이장 : faTint,
-    운동시설 : faFutbol,
-    놀이터 : faPlayCircle,
-    산책로 : faHiking,
-    운동장 : faPlay,
-    트렘폴린 : faPersonFalling,
+    전기: { icon: faBolt, color: 'yellow' },
+    무선인터넷: { icon: faWifi, color: 'blue' },
+    장작판매: { icon: faFire, color: 'red' },
+    온수: { icon: faTemperatureHigh, color: 'orange' },
+    마트: { icon: faShoppingCart, color: 'green' },
+    편의점: { icon: faStore, color: 'lightblue' },
+    물놀이장: { icon: faTint, color: 'blue' },
+    운동시설: { icon: faFutbol, color: 'green' },
+    놀이터: { icon: faPlayCircle, color: 'pink' },
+    산책로: { icon: faHiking, color: 'brown' },
+    운동장: { icon: faPlay, color: 'red' },
+    트렘폴린: { icon: faPersonFalling, color: 'purple' },
 } as any;
+
 
 export default function DetailFirstInfo({item}: DataProps) {
 
@@ -28,7 +29,7 @@ export default function DetailFirstInfo({item}: DataProps) {
 return (
     <div className={styles.firstInfo_container}>
         <div className={styles.firstInfo_intro}>
-            {item.intro}
+            {item.intro || "캠핑장 소개글이 없습니다."}
             <p>최종 정보 수정일 : {item.modifiedtime} </p>
         </div>
         <div className={styles.firstInfo_place}>
@@ -40,7 +41,12 @@ return (
                                 {item.sbrsCl.split(',').map((service, i) => (
                                     <li key={i}>
                                         <i>
-                                            <span><FontAwesomeIcon icon={serviceIcons[service.trim()] || faShoppingCart } />{service.trim()}</span>
+                                            <span style={{fontSize:"20px", fontWeight:"800"}}
+                                            className="service-icon"                                          
+                                            ><FontAwesomeIcon 
+                                            style={{ color: serviceIcons[service]?.color || 'lightslategray', marginRight: "5px", fontSize: "15px"}}
+                                            icon={serviceIcons[service.trim()]?.icon || faShoppingCart }
+                                            />{service.trim()}</span>
                                         </i>
                                     </li>
                                 ))}
