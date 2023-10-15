@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import styles from '../CSS/Detail.module.css';
 import DetailFirstInfo from './DetailFirstInfo';
+import KaKaoMap from './KakaoMap';
 
 
 type DataProps = {
@@ -41,6 +42,7 @@ return (
         
         </div>
         {activeComponent === "캠핑장 소개" &&  <DetailFirstInfo item={item}/>}
+        {activeComponent === "위치/주변정보" &&  <KaKaoMap/>}
     </>
     
 )
