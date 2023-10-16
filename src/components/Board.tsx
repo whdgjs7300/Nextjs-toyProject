@@ -5,9 +5,9 @@ import ReactPaginate from 'react-paginate';
 import BoardCard from './BoardCard';
 
 type DataProps = {
-    code : string | undefined | null,
-    title : string,
-    handlePageChange: (selectedPage: any) => void,
+    code? : string | undefined | null,
+    title? : string,
+    handlePageChange?: (selectedPage: any) => void,
 } 
 
 export default function Board({code, title,handlePageChange } : DataProps) {

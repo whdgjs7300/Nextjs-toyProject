@@ -3,6 +3,8 @@ import { useState } from 'react';
 import styles from '../CSS/Detail.module.css';
 import DetailFirstInfo from './DetailFirstInfo';
 import KaKaoMap from './KakaoMap';
+import Board from './Board';
+import Facility from './Facility';
 
 
 type DataProps = {
@@ -12,7 +14,7 @@ const campTag = [{
     id: 0,
     name : "캠핑장 소개"
 } , {id : 1,
-    name : "이용안내"
+    name : "시설정보"
 },  {id : 2,
     name : "위치/주변정보"
 },
@@ -42,7 +44,9 @@ return (
         
         </div>
         {activeComponent === "캠핑장 소개" &&  <DetailFirstInfo item={item}/>}
+        {activeComponent === "시설정보" &&  <Facility item={item}/>}
         {activeComponent === "위치/주변정보" &&  <KaKaoMap/>}
+        {activeComponent === "캠핑/여행후기" &&  <Board/>}
     </>
     
 )
