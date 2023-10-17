@@ -6,12 +6,13 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import SearchBox from '@/components/SearchBox';
 import CardBoard from '@/components/CardBoard';
-import {useSearchParams} from 'next/navigation';
+import {useSearchParams, useParams} from 'next/navigation';
+import KaKaoMap from '@/components/KakaoMap';
 
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
 
-// https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=${API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest
+
 export default function SearchList() {
 
     // SearchParams get으로 쿼리로 보낸 url 데이터를 가져와야함
@@ -19,6 +20,8 @@ export default function SearchList() {
     const selectedDoName = searchParams.get('selectedDoName');
     const selectedTheme = searchParams.get('selectedTheme');
     const keyWord = searchParams.get('keyWord');
+    const map = useParams(); 
+    console.log(map)
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [searchList, setSearchList] = useState<LocationCampingData[]>();
@@ -73,7 +76,11 @@ export default function SearchList() {
 return (
     <div className={styles.search_container}>
         
-        <img 
+        
+        {
+            map.keyword ==="map" ? <KaKaoMap/> : 
+            <>
+            <img 
             className={styles.search_banner}
         src='/detailbanner1.jpg' 
         alt='searchList banner'
@@ -87,6 +94,9 @@ return (
         <CardBoard searchData={searchList} 
         currentPage={currentPage}
         handlePageChange={handlePageChange}/>
+        </>
+        }
+
     </div>
 )
 }
