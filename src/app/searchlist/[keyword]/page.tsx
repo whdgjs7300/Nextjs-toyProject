@@ -8,6 +8,7 @@ import SearchBox from '@/components/SearchBox';
 import CardBoard from '@/components/CardBoard';
 import {useSearchParams, useParams} from 'next/navigation';
 import KaKaoMap from '@/components/KakaoMap';
+import ReactPaginate from 'react-paginate';
 
 
 const API_KEY = '9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D'
@@ -77,8 +78,15 @@ return (
     <div className={styles.search_container}>
         
         
-        {
-            map.keyword ==="map" ? <KaKaoMap/> : 
+        {   // 지도로 검색하기 창
+            map.keyword ==="map" ?  <>
+                <KaKaoMap 
+                currentPage={currentPage}
+                searchList={searchList}
+                handlePageChange={handlePageChange}
+                />
+        
+                </> : 
             <>
             <img 
             className={styles.search_banner}
