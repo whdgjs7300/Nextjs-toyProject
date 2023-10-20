@@ -1,25 +1,29 @@
 
 import styles from '../CSS/Map.module.css';
 
+type LocationCampingData = {
+    doNm: string;
+    sigunguNm: string;
+    facltNm: string;
+    addr1: string;
+    addr2: string;
+    tel: string;
+    mapX: number;
+    mapY: number;
+  };
 
 type DataProps = {
-    item? : LocationCampingData,
-    onCardClick? : (item: LocationCampingData) => void
-} 
+  item: LocationCampingData;
+  onCardClick: (item: LocationCampingData) => void;
+};
 
-
-export default function MapCard({item, onCardClick}: DataProps) {
-
-    
-return (
-        <div 
-        className={styles.mapcard_info}>
+export default function MapCard({ item, onCardClick }: DataProps) {
+    // MapCard 내부에서 카드 클릭 시 onCardClick 함수를 호출
+    return (
+        <div className={styles.mapcard_info} onClick={() => onCardClick(item)}>
             <h3>[{item?.doNm} {item?.sigunguNm} {item?.facltNm}]</h3>
             <p>{item?.addr1 || item?.addr2}</p>
             <p>{item?.tel}</p>
-            
         </div>
-
-
-)
-}
+        );
+    }

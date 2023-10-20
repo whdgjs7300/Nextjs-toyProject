@@ -76,7 +76,10 @@ export default function SearchList() {
 
 return (
     <div className={styles.search_container}>
-        
+        <img 
+            className={styles.search_banner}
+        src='/detailbanner1.jpg' 
+        alt='searchList banner'/>
         
         {   // 지도로 검색하기 창
             map.keyword ==="map" ?  <>

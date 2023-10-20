@@ -1,4 +1,6 @@
+
 import styles from '../CSS/Detail.module.css';
+
 
 type DataProps = {
     item : CampingData,
