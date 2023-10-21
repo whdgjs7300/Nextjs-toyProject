@@ -45,7 +45,7 @@ return (
         </div>
         {activeComponent === "캠핑장 소개" &&  <DetailFirstInfo item={item}/>}
         {activeComponent === "시설정보" &&  <Facility item={item}/>}
-        {activeComponent === "위치/주변정보" &&  <KaKaoMap/>}
+        {activeComponent === "위치/주변정보" &&  <KaKaoMap/> } 
         {activeComponent === "캠핑/여행후기" &&  <Board/>}
     </>
     

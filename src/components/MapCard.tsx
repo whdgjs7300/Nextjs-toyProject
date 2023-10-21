@@ -1,16 +1,7 @@
 
 import styles from '../CSS/Map.module.css';
 
-type LocationCampingData = {
-    doNm: string;
-    sigunguNm: string;
-    facltNm: string;
-    addr1: string;
-    addr2: string;
-    tel: string;
-    mapX: number;
-    mapY: number;
-  };
+
 
 type DataProps = {
   item: LocationCampingData;

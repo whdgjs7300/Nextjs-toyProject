@@ -88,7 +88,7 @@ return (
                 searchList={searchList}
                 handlePageChange={handlePageChange}
                 />
-        
+                <SearchBox/>
                 </> : 
             <>
             <img 

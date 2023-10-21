@@ -11,21 +11,12 @@
     }
     }
 
-    type LocationCampingData = {
-    doNm: string;
-    sigunguNm: string;
-    facltNm: string;
-    addr1: string;
-    addr2: string;
-    tel: string;
-    mapX: number;
-    mapY: number;
-    };
+    
 
     type DataProps = {
     searchList?: LocationCampingData[];
     currentPage?: number;
-    handlePageChange: (selectedPage: any) => void;
+    handlePageChange?: (selectedPage: any) => void;
     };
 
     export default function KaKaoMap({
@@ -37,7 +28,7 @@
     const itemsPerPage = 10;
     const mapRef: React.RefObject<any> = useRef(null);
     
-
+        console.log(mapRef)
     // 카카오 Map 초기화
     useEffect(() => {
         const kakaoMapScript = document.createElement('script');
@@ -120,8 +111,7 @@
             onPageChange={handlePageChange}
             forcePage={1}
             marginPagesDisplayed={1}
-            breakLabel="..."
-            containerClassName="pagination"
+            className="custom_pagination"
             />
         </div>
         </div>
