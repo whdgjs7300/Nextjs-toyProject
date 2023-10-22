@@ -17,12 +17,14 @@
     searchList?: LocationCampingData[];
     currentPage?: number;
     handlePageChange?: (selectedPage: any) => void;
+    item?: LocationCampingData,
     };
 
     export default function KaKaoMap({
     searchList,
     currentPage = 0,
     handlePageChange,
+    item,
     }: DataProps) {
 
     const itemsPerPage = 10;
@@ -41,7 +43,7 @@
             var container = document.getElementById('map');
             var options = {
             // 초기값 첫번째 캠핑 데이터
-            center: new window.kakao.maps.LatLng(37.7278127, 127.5112565),
+            center: new window.kakao.maps.LatLng(item?.mapY || 37.7278127, item?.mapX || 127.5112565) ,
             level: 3,
             };
 
@@ -91,29 +93,45 @@
 
     return (
         <div className={styles.map_container}>
-        <div id="map" style={{ width: "70%", height: "700px" }} ref={mapRef}></div>
-        <div className={styles.mapcard}>
-            {searchList
-            ?.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
-            .map((searchData, i) => (
-                <MapCard
-                item={searchData}
-                key={i}
-                onCardClick={handleCardClick}
-                />
-            ))}
-            <ReactPaginate
-            previousLabel="PREV"
-            nextLabel="NEXT"
-            pageRangeDisplayed={5}
-            pageCount={searchList ? Math.ceil(searchList.length / 10) : 1}
-            renderOnZeroPageCount={null}
-            onPageChange={handlePageChange}
-            forcePage={1}
-            marginPagesDisplayed={1}
-            className="custom_pagination"
-            />
-        </div>
+            {
+                item ? (
+                    <div>
+                        <div id="map" style={{ width: "700px", height: "700px" }} ref={mapRef}></div>
+                        <div className="item-info">
+                            <div>{item.facltNm}</div>
+                            <div>{item.addr1}</div>
+                            <div>{item.tel}</div>
+                        </div>
+                    </div>
+                    ) : (
+                    <div>
+                <div id="map" style={{ width: "700px", height: "700px" }} ref={mapRef}></div>
+                    <div className={styles.mapcard}>
+                        {searchList
+                        ?.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
+                        .map((searchData, i) => (
+                            <MapCard
+                            item={searchData}
+                            key={i}
+                            onCardClick={handleCardClick}
+                            />
+                        ))}
+                        <ReactPaginate
+                        previousLabel="PREV"
+                        nextLabel="NEXT"
+                        pageRangeDisplayed={5}
+                        pageCount={searchList ? Math.ceil(searchList.length / 10) : 1}
+                        renderOnZeroPageCount={null}
+                        onPageChange={handlePageChange}
+                        forcePage={1}
+                        marginPagesDisplayed={1}
+                        className="custom_pagination"
+                        />
+                    </div>
+                </div>
+                )
+            }
+        
         </div>
     );
     }

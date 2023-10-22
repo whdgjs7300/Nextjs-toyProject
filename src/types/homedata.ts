@@ -64,6 +64,8 @@ type LocationCampingData = {
     autoSiteCo: string;
     bizzrno: string;
     brazierCl: string;
+    induty : string;
+    
     caravAcmpnyAt: string;
     caravInnerFclty: string;
     caravSiteCo: string;

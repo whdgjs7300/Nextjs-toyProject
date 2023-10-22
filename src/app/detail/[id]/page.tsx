@@ -16,7 +16,7 @@ export default function Detail() {
     
     const {id} = useParams();
     
-    const [detailData,setDetailData] = useState<CampingData[]>();
+    const [detailData,setDetailData] = useState<LocationCampingData[]>();
     const [detailImages,setDetailImages] = useState<DetailImageData[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true); 
 
