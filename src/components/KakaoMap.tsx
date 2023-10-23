@@ -50,7 +50,30 @@
             var map = new window.kakao.maps.Map(container, options);
 
             const markers: { marker: any; campingData: LocationCampingData }[] = [];
+            // 데이터가 item일 경우
+            if (item) {
+                const markerPosition = new window.kakao.maps.LatLng(item.mapY, item.mapX);
+                const marker = new window.kakao.maps.Marker({
+                    position: markerPosition,
+                    map: map,
+                    title: item.facltNm,
+                    });
+                    
+                    
+                    // 마커를 클릭하면 해당 위치로 이동
+                    window.kakao.maps.event.addListener(marker, 'click', () => {
+                    map.panTo(marker.getPosition());
+                    });
+                    
+                    // 마커 클릭 시 정보 윈도우를 항상 열린 상태로 설정
+                    const infoWindow = new window.kakao.maps.InfoWindow({
+                        content: `<div>${item.facltNm}</div><div>${item.addr1}</div><div>${item.tel}</div>`,
+                    });
+                    infoWindow.open(map, marker);
 
+                }
+        
+            // 데이터가 seachList 일 경우
             // 데이터 배열을 반복하여 마커 생성 및 추가
             searchList?.forEach((campingData, index) => {
             const markerPosition = new window.kakao.maps.LatLng(
@@ -63,6 +86,13 @@
                 title: campingData.facltNm,
             });
             markers.push({ marker, campingData });
+            // 마커 클릭 시 정보 윈도우를 표시
+        const infoWindow = new window.kakao.maps.InfoWindow({
+            content: `<div>${campingData.facltNm}</div><div>${campingData.addr1}</div><div>${campingData.tel}</div>`,
+            });
+            window.kakao.maps.event.addListener(marker, 'click', () => {
+                infoWindow.open(map, marker);
+            });
             });
 
             // MapCard를 클릭하면 해당 위치로 이동
@@ -70,7 +100,9 @@
             window.kakao.maps.event.addListener(marker, 'click', () => {
                 map.panTo(marker.getPosition());
             });
+            
             });
+            
 
             // 지도 참조 설정
             if (mapRef.current) {
@@ -81,7 +113,7 @@
         };
 
         kakaoMapScript.addEventListener('load', onLoadKakaoAPI);
-    }, [searchList]);
+    }, [searchList, item]);
 
     // 콜백 함수: 카드를 클릭하면 호출됩니다.
     const handleCardClick = (item: LocationCampingData) => {
