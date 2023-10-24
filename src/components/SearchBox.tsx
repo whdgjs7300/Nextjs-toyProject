@@ -7,14 +7,18 @@ import { useRouter } from 'next/navigation';
 
 // 라우터 쿼리문 수정 및 리팩토링
 
-export default function SearchBox() {
+type DataProps = {
+    paramMap? : string,
+};
+
+export default function SearchBox({paramMap}: DataProps) {
     const [selectedDoName, setSelectedDoName] = useState(''); 
     const [selectedTheme, setSelectedTheme] = useState('');
     const [keyWord, setKeyWord] = useState('');
     const router = useRouter();
     
     
-    console.log(router)
+    console.log(paramMap)
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -65,14 +69,29 @@ return (
                             ))
                         }
                     </select>
-                    <Link href={{
-                    pathname: `/searchlist/list`,
-                    query: { 
-                        selectedDoName,
-                        selectedTheme,
-                        keyWord,
-                            }
-                    }}>캠핑장 검색</Link>
+                    {
+                        paramMap === "map" ? (
+                            <>
+                                <Link href={{
+                                    pathname: `/searchlist/map`,
+                                    query: { 
+                                        selectedDoName,
+                                        selectedTheme,
+                                        keyWord,
+                                            }
+                                    }}>캠핑장 검색</Link>
+                            </>
+                        ) : (
+                            <Link href={{
+                            pathname: `/searchlist/list`,
+                            query: { 
+                                selectedDoName,
+                                selectedTheme,
+                                keyWord,
+                                    }
+                            }}>캠핑장 검색</Link>)
+                    }
+                    
                 </div>
                 
             </div>

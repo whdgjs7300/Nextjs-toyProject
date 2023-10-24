@@ -34,7 +34,7 @@ export default function SearchList() {
     };
 
     
-    console.log(searchList) 
+    console.log(map.keyword) 
     useEffect(()=>{
         let apiUrl = '';
 
@@ -88,7 +88,7 @@ return (
                 searchList={searchList}
                 handlePageChange={handlePageChange}
                 />
-                <SearchBox/>
+                <SearchBox paramMap={map.keyword}/>
                 </> : 
             <>
             <img 
