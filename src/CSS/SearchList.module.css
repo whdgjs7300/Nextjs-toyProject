@@ -8,11 +8,12 @@
     height: 300px;
 }
 
-.search_container img {
+.search_banner img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     display: block;
 }
+
 /* #34536d */
 .search_title{
     width: 95%;

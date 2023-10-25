@@ -30,7 +30,7 @@
     const itemsPerPage = 10;
     const mapRef: React.RefObject<any> = useRef(null);
     
-        console.log(mapRef)
+        
     // 카카오 Map 초기화
     useEffect(() => {
         const kakaoMapScript = document.createElement('script');
@@ -43,7 +43,7 @@
             var container = document.getElementById('map');
             var options = {
             // 초기값 첫번째 캠핑 데이터
-            center: new window.kakao.maps.LatLng(item?.mapY || 37.7278127, item?.mapX || 127.5112565) ,
+            center: new window.kakao.maps.LatLng(item?.mapY || searchList && searchList[0].mapY  , item?.mapX || searchList && searchList[0].mapX) ,
             level: 3,
             };
 

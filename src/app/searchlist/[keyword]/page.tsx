@@ -76,10 +76,13 @@ export default function SearchList() {
 
 return (
     <div className={styles.search_container}>
+        <div className={styles.search_banner}>
         <img 
-            className={styles.search_banner}
+            
         src='/detailbanner1.jpg' 
         alt='searchList banner'/>
+        </div>
+        
         
         {   // 지도로 검색하기 창
             map.keyword ==="map" ?  <>
@@ -91,13 +94,7 @@ return (
                 <SearchBox paramMap={map.keyword}/>
                 </> : 
             <>
-            <img 
-            className={styles.search_banner}
-        src='/detailbanner1.jpg' 
-        alt='searchList banner'
-        >
             
-        </img>
         
         
         <SearchBox/>
