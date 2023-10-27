@@ -1,9 +1,11 @@
 .map_container {
-    display: flex;
-    
+   
 }
 
-
+.main_box {
+  display: flex;
+  
+}
 
 
 /* 맵카드 스타일 (검색 결과 목록 내부) */
@@ -11,7 +13,7 @@
     display: flex;
     flex-direction: column; /* 요소를 세로로 정렬 */
     border: 1px solid black;
-    
+    width: 300px;
 }
 .mapcard_info {
     border-bottom: 1px solid black;
@@ -42,3 +44,55 @@
     background-color: #555; /* 마우스 오버 시 버튼 배경색을 원하는 색상으로 수정 */
   }
   
+
+.pagination_container {
+  /* 페이지네이션 컴포넌트의 스타일 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+
+.pagination_page {
+  /* 페이지 버튼 스타일 */
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 28px;
+  color: #333;
+  transition: color 0.3s;
+  background-color: #f5f5f5; 
+  padding: 0 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 25px;
+  list-style: none;
+}
+
+
+.pagination_page:hover {
+  color: #007bff;
+}
+
+.pagination_active {
+  /* 활성화된 페이지 버튼 스타일 */
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination_previous,
+.pagination_next {
+  /* 이전/다음 버튼 스타일 */
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 32px;
+  color: #333;
+  transition: color 0.3s;
+  list-style: none;
+}
+
+.pagination_previous:hover,
+.pagination_next:hover {
+  color: #007bff;
+}

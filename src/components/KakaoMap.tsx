@@ -50,7 +50,7 @@
             var map = new window.kakao.maps.Map(container, options);
 
             const markers: { marker: any; campingData: LocationCampingData }[] = [];
-            // 데이터가 item일 경우
+            // 데이터가 item일 경우(디테일 데이터)
             if (item) {
                 const markerPosition = new window.kakao.maps.LatLng(item.mapY, item.mapX);
                 const marker = new window.kakao.maps.Marker({
@@ -128,15 +128,12 @@
             {
                 item ? (
                     <div>
+                        <h2>찾아오시는 길</h2>
                         <div id="map" style={{ width: "700px", height: "700px" }} ref={mapRef}></div>
-                        <div className="item-info">
-                            <div>{item.facltNm}</div>
-                            <div>{item.addr1}</div>
-                            <div>{item.tel}</div>
-                        </div>
+                        
                     </div>
                     ) : (
-                    <div>
+                <div className={styles.main_box}>
                 <div id="map" style={{ width: "700px", height: "700px" }} ref={mapRef}></div>
                     <div className={styles.mapcard}>
                         {searchList
@@ -158,6 +155,15 @@
                         forcePage={1}
                         marginPagesDisplayed={1}
                         className="custom_pagination"
+                        containerClassName={styles.pagination_container}
+                        pageClassName={styles.pagination_page}
+                        activeClassName={styles.pagination_active}
+                        previousClassName={styles.pagination_previous}
+                        nextClassName={styles.pagination_next}
+                        previousLinkClassName={styles.pagination_link}
+                        nextLinkClassName={styles.pagination_link}
+                        disabledClassName={styles.pagination_disabled}
+                        disabledLinkClassName={styles.pagination_disabled_link}
                         />
                     </div>
                 </div>
