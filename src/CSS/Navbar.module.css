@@ -1,84 +1,49 @@
-/* Navbar.module.css */
-
 .navbar {
-    /*  #003458 
-    #364466 #34536d
-    */
-    text-align: center;
-    border: 1px solid #dedede;
-    padding: 10px 0;
-    
-}
-
-
-.navList {
-    list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    
+    background-color: #333; /* 배경색 설정 */
+    padding: 10px 20px; /* 상하좌우 여백 설정 */
+    color: #fff; /* 글자색 설정 */
 }
 
-
+/* 상위 메뉴 스타일 */
 .navItem {
-    margin: 0 105px;
-    position: relative;
-    background-color: white;
-    
+    margin: 0 10px; /* 메뉴 아이템 간 여백 설정 */
+    position: relative; /* 상대 위치 설정 */
+    cursor: pointer;
 }
 
-.navLink {
-    text-decoration: none;
-    color: black;
-    font-size: 42px;
-    
-}
-
-.navLink:hover {
-    color: black;
-
-}
-
+/* 서브 네브바 스타일 */
 .subNavbar {
-    background-color: white;
-    position: absolute;
-    top: 100%; 
-    display: flex; /* 하위 모달을 가로로 정렬하기 위해 flex 사용 */
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    
-    
+    position: absolute; /* 절대 위치 설정 */
+    top: 100%; /* 상단에 붙이도록 설정 */
+    left: 0;
+    display: none; /* 기본으로 숨김 상태로 설정 */
+    background-color: #444; /* 배경색 설정 */
+    padding: 10px; /* 여백 설정 */
 }
 
-
-.subNavList {
-    list-style: none; 
-    padding: 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+/* 상위 메뉴 호버 시 서브 네브바 표시 */
+.navItem:hover .subNavbar {
+    display: block;
 }
+
+/* 서브 네브바 아이템 스타일 */
 .subNavItem {
-    margin: 10px;
-    display: flex;
-    align-items: center;
+    margin: 5px 0; /* 메뉴 아이템 간 여백 설정 */
 }
 
-.subNavLink {
-    
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
-    height: 100%; /* 하위 목록 아이템 내의 텍스트를 세로 중앙에 정렬 */
-    display: flex;
-    align-items: center;
+/* 링크 스타일 */
+.navLink, .subNavLink {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #fff; /* 글자색 설정 */
+}
 
-    
+/* 링크 호버 시 스타일 변경 */
+.navLink:hover, .subNavLink:hover {
+    text-decoration: underline; /* 밑줄 추가 */
+    color: #ff6600; /* 호버 시 글자색 변경 */
 }
 
 .loginnav_container {

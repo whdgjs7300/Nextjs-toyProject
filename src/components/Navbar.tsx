@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Navbar() {
     // Nav 모달 셋 
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState<boolean>(true);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState<boolean>(false);
 
     const handleMouseEnter = () => {
         setIsSubMenuOpen(true);
@@ -18,14 +18,27 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navbar} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-    <ul className={styles.navList}>
-        <li className={styles.navItem}>
-            <Link className={styles.navLink} href="/">
-                CAMPHUB
-            </Link>
+            <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/">
+                        CAMPHUB
+                    </Link>
+                </li>
+
+                {/* 나머지 상위 메뉴 아이템들 추가 */}
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/about">
+                        캠핑소식
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <Link className={styles.navLink} href="/services">
+                        고객센터
+                    </Link>
+                </li>
+            </ul>
             {isSubMenuOpen && (
                 <div className={styles.subNavbar}>
-                    {/* 서브 네브바 내용 */}
                     <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
                             <Link className={styles.subNavLink} href="/searchlist/basic">
@@ -37,27 +50,14 @@ export default function Navbar() {
                                 지도로 검색하기
                             </Link>
                         </li>
-                        {/* 나머지 서브 네브바 아이템 추가 */}
-                    </ul>
-                </div>
-            )}
-        </li>
-        <li className={styles.navItem}>
-            <Link className={styles.navLink} href="/about">
-                캠핑소식
-            </Link>
-            {/* 캠핑소식 메뉴의 드롭다운 메뉴 내용 추가 */}
-            {isSubMenuOpen && (
-                <div className={styles.subNavbar}>
-                    <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
                             <Link className={styles.subNavLink} 
                             href={{
                                 pathname: `/zboard/list`,
                                 query: { 
-                                        code : "campNews"
-                                        }
-                                }}>
+                                    code : "campNews"
+                                }
+                            }}>
                                 캠핑소식
                             </Link>
                         </li>
@@ -66,33 +66,20 @@ export default function Navbar() {
                             href={{
                                 pathname: `/zboard/list`,
                                 query: { 
-                                        code : "campSafe"
-                                        }
-                                }}>
+                                    code : "campSafe"
+                                }
+                            }}>
                                 안전한 캠핑즐기기
                             </Link>
                         </li>
-                        {/* 나머지 서브 네브바 아이템 추가 */}
-                    </ul>
-                </div>
-            )}
-        </li>
-        <li className={styles.navItem}>
-            <Link className={styles.navLink} href="/services">
-                고객센터
-            </Link>
-            {/* 고객센터 메뉴의 드롭다운 메뉴 내용 추가 */}
-            {isSubMenuOpen && (
-                <div className={styles.subNavbar}>
-                    <ul className={styles.subNavList}>
                         <li className={styles.subNavItem}>
                             <Link className={styles.subNavLink} 
                             href={{
                                 pathname: `/zboard/list`,
                                 query: { 
-                                        code : "notice"
-                                        }
-                                }}>
+                                    code : "notice"
+                                }
+                            }}>
                                 공지사항
                             </Link>
                         </li>
@@ -101,9 +88,9 @@ export default function Navbar() {
                             href={{
                                 pathname: `/zboard/list`,
                                 query: { 
-                                        code : "campRequest"
-                                        }
-                                }}>
+                                    code : "campRequest"
+                                }
+                            }}>
                                 문의 및 수정요청
                             </Link>
                         </li>
@@ -111,8 +98,6 @@ export default function Navbar() {
                     </ul>
                 </div>
             )}
-        </li>
-    </ul>
-</nav>
-    )
+        </nav>
+    );
 }
