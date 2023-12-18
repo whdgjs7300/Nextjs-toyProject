@@ -5,8 +5,6 @@ type ItemsData<T> = {
     numOfRows: number;
     pageNo: string;
     totalCount: number;
-
-    
 };
 
 type CampingData = {
@@ -65,7 +63,6 @@ type LocationCampingData = {
     bizzrno: string;
     brazierCl: string;
     induty : string;
-    
     caravAcmpnyAt: string;
     caravInnerFclty: string;
     caravSiteCo: string;
@@ -142,7 +139,7 @@ type LocationCampingData = {
     zipcode: string;
     
     length : number;
-  };
+};
 
 type DetailImageData = {
     contentId: string;

@@ -15,7 +15,7 @@ export default function Navbar() {
     const handleMouseLeave = () => {
         setIsSubMenuOpen(false);
     };
-
+    // html 부터 다시 짜보자
     return (
         <nav className={styles.navbar} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <ul className={styles.navList}>

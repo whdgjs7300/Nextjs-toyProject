@@ -19,7 +19,7 @@ export default  function Home() {
       <MainBanner/>
       <Location/>
       <OceanBanner/>
-      <ForestBanner  />
+      <ForestBanner/>
       <StoryBanner/>
       
 

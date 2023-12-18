@@ -32,6 +32,7 @@ export default  function CampBoard() {
     // locationData 값이 있는 경우에만 파싱하여 lat와 lon 값을 가져오기
     let lat: number | null = null;
     let lon: number | null = null;
+    
     if (locationData) {
         const { lat: storedLat, lon: storedLon } = JSON.parse(locationData);
         lat = storedLat;
